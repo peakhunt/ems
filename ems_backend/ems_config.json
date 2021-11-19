@@ -1,0 +1,24 @@
+{
+  "user_mgmt": {
+    "super_secret": "180037684e54a59a25a076f9ad02ff1e8722660f6642e52c61d83978a5bb89a2",
+    "timeout_in_secs": 600
+  },
+  "log": {
+    "level": "debug"
+  },
+  "web": {
+    "port":80,
+    "devPort":3000
+  },
+  "devMode": {
+    "enabled": true
+  },
+  "emsDB": {
+    "type": "mysql",
+    "user": "scanjetems",
+    "password": "scanjetems",
+    "dbName": "ems",
+    "maxConnPool": 100,
+    "queueLimit" : 0
+  }
+}
