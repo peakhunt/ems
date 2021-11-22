@@ -11,7 +11,7 @@
             Scanjet EMS
           </v-list-item-title>
           <v-list-item-subtitle>
-            subtext
+            v{{ appVersion  }}
           </v-list-item-subtitle>
         </v-list-item-content>
       </v-list-item>
@@ -172,6 +172,7 @@ export default {
       'progress_overlay_visible',
       'progress_overlay_msg',
       'snackbar_queue_items',
+      'appVersion',
     ]),
     currentRouteName() {
       return this.$route.name;
@@ -201,6 +202,12 @@ export default {
           title: this.$i18n.t('userMgmt.name'),
           to: '/user_management',
           cap: this.$router.options.routes[3].meta.cap,
+        },
+        {
+          icon: 'settings',
+          title: this.$i18n.t('settings.name'),
+          to: '/settings',
+          cap: this.$router.options.routes[5].meta.cap,
         },
         {
           icon: 'apps',

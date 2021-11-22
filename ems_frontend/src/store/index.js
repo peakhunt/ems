@@ -4,10 +4,32 @@ import createPersistedState from 'vuex-persistedstate';
 // import SecureLS from 'secure-ls';
 import User from './user';
 import Ui from './ui';
+import Settings from './settings';
+import Version from './version';
 
 // const ls = new SecureLS({ isCompression: false });
 
 Vue.use(Vuex);
+
+const sessionStorage = createPersistedState({
+  paths: [
+    'User',
+  ],
+  storage: window.sessionStorage,
+  /*
+  storage: {
+    getItem: (key) => ls.get(key),
+    setItem: (key, value) => ls.set(key, value),
+    removeItem: (key) => ls.remove(key),
+  },
+  */
+});
+
+const localStorage = createPersistedState({
+  paths: [
+    'Settings',
+  ],
+});
 
 export default new Vuex.Store({
   state: {
@@ -19,21 +41,12 @@ export default new Vuex.Store({
   modules: {
     User,
     Ui,
+    Settings,
+    Version,
   },
   plugins: [
-    createPersistedState({
-      paths: [
-        'User',
-      ],
-      storage: window.sessionStorage,
-      /*
-      storage: {
-        getItem: (key) => ls.get(key),
-        setItem: (key, value) => ls.set(key, value),
-        removeItem: (key) => ls.remove(key),
-      },
-      */
-    }),
+    sessionStorage,
+    localStorage,
   ],
   strict: true,
 });

@@ -46,6 +46,11 @@ export default {
       err3: 'Password doesn\'t match',
       changePassSuccess: 'Successfully changed password',
     },
+    settings: {
+      name: 'Settings',
+      lang: 'Language',
+      langSelTitle: 'System Language',
+    },
     UserManagementDialog: {
       title: 'Add New User',
       userInfo: 'User Info',
@@ -118,6 +123,11 @@ export default {
       err2: '새로운 비밀번호를 입력해 주십시오',
       err3: '새로운 비밀번호가 맞지 않습니다',
       changePassSuccess: '비밀번호를 변경하였습니다',
+    },
+    settings: {
+      name: '설정',
+      lang: '언어',
+      langSelTitle: '시스템 언어',
     },
     about: {
       name: 'S/W 정보',

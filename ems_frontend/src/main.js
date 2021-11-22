@@ -1,10 +1,14 @@
 import Vue from 'vue';
 import Axios from 'axios';
 import VuetifySnackbarQueue from 'vuetify-snackbar-queue';
+import store from './store';
+//
+// i18n must be initialized after vuex so that it can
+// extract locale properly
+//
 import i18n from './i18n';
 import App from './App.vue';
 import router from './router';
-import store from './store';
 import vuetify from './plugins/vuetify';
 
 require('typeface-roboto');

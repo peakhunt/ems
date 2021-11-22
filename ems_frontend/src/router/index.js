@@ -8,6 +8,7 @@ import About from '../views/About.vue';
 import UserManagement from '../views/UserManagement.vue';
 import UserProfile from '../views/UserProfile.vue';
 import Unauthorized from '../views/Unauthorized.vue';
+import Settings from '../views/Settings.vue';
 
 import Capabilities from '../Capabilities';
 
@@ -69,6 +70,15 @@ const routes = [
     },
   },
   {
+    path: '/settings',
+    name: i18n.t('settings.name'),
+    component: Settings,
+    meta: {
+      requiresAuth: true,
+      cap: 0,
+    },
+  },
+  {
     path: '/unauthorized',
     name: 'Unauthorized',
     component: Unauthorized,
@@ -78,6 +88,10 @@ const routes = [
     },
   },
 ];
+
+// this doesn't work!!!
+// Vue.set(routes[0], 'name', i18n.t('dashboard.name'));
+// Vue.set(routes[5], 'name', i18n.t('dashboard.name'));
 
 const router = new VueRouter({
   routes,
