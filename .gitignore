@@ -8,11 +8,11 @@ node_modules
 .env.*.local
 
 # Log files
+ems_backend/my_log.log
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
-ems_backend/my_log.log*
 
 # Editor directories and files
 .idea

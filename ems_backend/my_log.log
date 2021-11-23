@@ -3037,3 +3037,11 @@
 2021-11-23T08:09:03.835Z warn: running in dev mode using port 3000
 2021-11-23T08:09:03.842Z info: EMS Web Server listening on port 3000!
 2021-11-23T08:09:03.845Z info: EMS Server. Startup Complete!
+2021-11-23T08:11:15.676Z info: logger created with log level debug
+2021-11-23T08:11:15.803Z info: starting EMS server
+2021-11-23T08:11:15.806Z info: connected to database. testing db connection
+2021-11-23T08:11:15.836Z info: testing db connection success. initializing web interface
+2021-11-23T08:11:15.837Z info: initializing web interface
+2021-11-23T08:11:15.841Z warn: running in dev mode using port 3000
+2021-11-23T08:11:15.853Z info: EMS Web Server listening on port 3000!
+2021-11-23T08:11:15.854Z info: EMS Server. Startup Complete!
