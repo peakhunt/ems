@@ -2936,3 +2936,31 @@
 2021-11-18T08:52:34.330Z info: admin logged in
 2021-11-18T08:52:47.040Z debug: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiYWNjZXNzX3RpbWUiOiIyMDIxLTExLTE4VDA4OjUyOjM0LjMzMFoiLCJpYXQiOjE2MzcyMjU1NTR9.XbcUBdVV-wsTZSGPcJ9CzfS2Jcf7MfbU9-TEiT6rXj8 timedout
 2021-11-18T08:52:47.041Z info: admin logged out
+2021-11-22T06:18:09.790Z info: logger created with log level debug
+2021-11-22T06:18:10.069Z info: starting EMS server
+2021-11-22T06:18:10.074Z info: connected to database. testing db connection
+2021-11-22T06:18:10.137Z info: testing db connection success. initializing web interface
+2021-11-22T06:18:10.138Z info: initializing web interface
+2021-11-22T06:18:10.144Z warn: running in dev mode using port 3000
+2021-11-22T06:18:10.151Z info: EMS Web Server listening on port 3000!
+2021-11-22T06:18:10.151Z info: EMS Server. Startup Complete!
+2021-11-22T06:28:43.863Z info: admin logged in
+2021-11-22T07:23:40.116Z debug: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiYWNjZXNzX3RpbWUiOiIyMDIxLTExLTIyVDA2OjI4OjQzLjg2M1oiLCJpYXQiOjE2Mzc1NjI1MjN9.mQ_Jiv-Kr5muVgyg_SHCS-1WpFTboise7q3x3ufuzQA timedout
+2021-11-22T07:23:40.117Z info: admin logged out
+2021-11-22T07:28:04.285Z info: admin logged in
+2021-11-22T08:11:01.012Z debug: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiYWNjZXNzX3RpbWUiOiIyMDIxLTExLTIyVDA3OjI4OjA0LjI4NVoiLCJpYXQiOjE2Mzc1NjYwODR9.c_4uG7r7q9uh5Sigvpo8nhB4cRzoHWWW_1grf4ZrMjc timedout
+2021-11-22T08:11:01.013Z info: admin logged out
+2021-11-22T08:11:13.977Z info: admin logged in
+2021-11-22T08:26:03.963Z info: admin logged in
+2021-11-22T08:26:51.392Z info: admin logged out
+2021-11-22T08:26:54.595Z info: admin logged in
+2021-11-22T08:30:34.837Z info: admin logged out
+2021-11-22T08:30:38.387Z info: admin logged in
+2021-11-22T08:41:37.514Z debug: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiYWNjZXNzX3RpbWUiOiIyMDIxLTExLTIyVDA4OjMwOjM4LjM4OFoiLCJpYXQiOjE2Mzc1Njk4Mzh9.se4RR12NWMYMvrUvlJBG2t_x_oE3ofRvzHn-aJzxeBw timedout
+2021-11-22T08:41:37.514Z info: admin logged out
+2021-11-22T08:41:44.512Z info: admin logged in
+2021-11-22T09:05:50.829Z debug: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiYWNjZXNzX3RpbWUiOiIyMDIxLTExLTIyVDA4OjQxOjQ0LjUxM1oiLCJpYXQiOjE2Mzc1NzA1MDR9.7Ww43Bbzmqz5C-tW1sjALph2OOzDlBdUNPIWUAiQhXw timedout
+2021-11-22T09:05:50.830Z info: admin logged out
+2021-11-22T09:09:01.122Z info: admin logged in
+2021-11-22T09:09:33.922Z info: admin logged out
+2021-11-22T09:16:56.345Z info: admin logged in
