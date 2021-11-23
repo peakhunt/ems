@@ -2964,3 +2964,60 @@
 2021-11-22T09:09:01.122Z info: admin logged in
 2021-11-22T09:09:33.922Z info: admin logged out
 2021-11-22T09:16:56.345Z info: admin logged in
+2021-11-23T00:18:39.538Z info: logger created with log level debug
+2021-11-23T00:18:39.689Z info: starting EMS server
+2021-11-23T00:18:39.692Z info: connected to database. testing db connection
+2021-11-23T00:18:39.737Z info: testing db connection success. initializing web interface
+2021-11-23T00:18:39.738Z info: initializing web interface
+2021-11-23T00:18:39.740Z warn: running in dev mode using port 3000
+2021-11-23T00:18:39.747Z info: EMS Web Server listening on port 3000!
+2021-11-23T00:18:39.750Z info: EMS Server. Startup Complete!
+2021-11-23T00:20:22.629Z info: admin logged in
+2021-11-23T00:20:39.193Z info: admin logged out
+2021-11-23T00:21:52.303Z info: admin logged in
+2021-11-23T00:22:54.102Z info: admin logged out
+2021-11-23T00:59:47.292Z info: admin logged in
+2021-11-23T01:00:18.806Z info: admin logged out
+2021-11-23T02:02:33.797Z info: admin logged in
+2021-11-23T02:21:04.853Z debug: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiYWNjZXNzX3RpbWUiOiIyMDIxLTExLTIzVDAyOjAyOjMzLjc5N1oiLCJpYXQiOjE2Mzc2MzI5NTN9.Zt-ShaYQGroS890SZ_J3Sh_UTtbltLEx8CbvI0qf6oI timedout
+2021-11-23T02:21:04.853Z info: admin logged out
+2021-11-23T02:21:34.162Z info: admin logged in
+2021-11-23T02:25:43.047Z info: admin logged out
+2021-11-23T02:42:14.985Z info: admin logged in
+2021-11-23T02:42:19.933Z info: admin logged out
+2021-11-23T02:44:48.436Z info: admin logged in
+2021-11-23T02:44:53.593Z info: admin logged out
+2021-11-23T05:09:33.264Z info: admin logged in
+2021-11-23T05:09:52.031Z info: admin logged out
+2021-11-23T05:17:10.438Z info: admin logged in
+2021-11-23T05:17:29.271Z info: admin logged out
+2021-11-23T07:14:58.391Z info: admin logged in
+2021-11-23T07:15:04.422Z info: admin logged out
+2021-11-23T07:26:09.446Z info: admin logged in
+2021-11-23T07:26:47.476Z info: admin logged out
+2021-11-23T07:27:41.172Z info: admin logged in
+2021-11-23T07:27:45.552Z info: admin logged out
+2021-11-23T07:29:53.918Z info: admin logged in
+2021-11-23T07:31:11.800Z info: admin logged out
+2021-11-23T07:31:16.018Z info: admin logged in
+2021-11-23T07:50:58.868Z debug: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiYWNjZXNzX3RpbWUiOiIyMDIxLTExLTIzVDA3OjMxOjE2LjAxOFoiLCJpYXQiOjE2Mzc2NTI2NzZ9.JIgom9GiNrRUuGaGqQkNYFOPSDTpqS3vJvLnE_TidYA timedout
+2021-11-23T07:50:58.869Z info: admin logged out
+2021-11-23T07:51:05.140Z info: admin logged in
+2021-11-23T07:51:27.177Z info: admin logged out
+2021-11-23T07:53:44.588Z info: admin logged in
+2021-11-23T07:54:41.944Z info: admin logged out
+2021-11-23T07:54:45.113Z info: admin logged in
+2021-11-23T07:55:03.203Z info: admin logged out
+2021-11-23T07:55:07.721Z info: admin logged in
+2021-11-23T07:55:14.783Z info: admin logged out
+2021-11-23T07:55:43.430Z info: admin logged in
+2021-11-23T07:56:17.084Z info: admin logged out
+2021-11-23T07:56:24.607Z info: admin logged in
+2021-11-23T07:56:40.256Z info: admin logged out
+2021-11-23T07:56:45.584Z info: monitoring logged in
+2021-11-23T07:59:46.444Z info: monitoring logged out
+2021-11-23T07:59:49.572Z info: admin logged in
+2021-11-23T08:00:27.105Z info: admin logged out
+2021-11-23T08:00:30.190Z info: admin logged in
+2021-11-23T08:00:40.066Z info: admin logged out
+2021-11-23T08:00:43.368Z info: admin logged in
