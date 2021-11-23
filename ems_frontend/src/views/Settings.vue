@@ -28,7 +28,7 @@
                     <v-col cols="7">
                       <v-select
                        v-model="selectedLanguage"
-                       :items="languages"
+                       :items="languagesSupported"
                        item-text="name"
                        item-value="lang"
                        return-object
@@ -64,6 +64,7 @@ export default {
   computed: {
     ...mapGetters([
       'lang',
+      'languagesSupported',
     ]),
     selectedLanguage: {
       get() {
@@ -72,7 +73,7 @@ export default {
           lang: this.lang,
         };
 
-        this.languages.forEach((lg) => {
+        this.languagesSupported.forEach((lg) => {
           if (this.lang === lg.lang) {
             l = lg;
           }
@@ -81,21 +82,11 @@ export default {
       },
       set(v) {
         this.$store.commit('set_lang', v.lang);
-        //
-        // XXX
-        // another dirty hack.
-        // until I find a proper solution...
-        //
-        window.location.reload();
       },
     },
   },
   data() {
     return {
-      languages: [
-        { name: 'English', lang: 'en' },
-        { name: '한국어', lang: 'kr' },
-      ],
     };
   },
 };

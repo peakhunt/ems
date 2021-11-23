@@ -8,6 +8,9 @@ export default {
     Cancel: 'Cancel',
     Confirm: 'Confirm',
     test1: 'LATEST RELEASE',
+    loggingOut: 'Logging Out',
+    forcedLogout: 'You are logged out by the server',
+    initializing: 'Initializing EMS Client...',
     login: {
       name: 'Login',
       str1: 'Login',
@@ -29,6 +32,12 @@ export default {
       delSuccess: 'Successfully deleted the user account',
       updatePassSuccess: 'Successfully updated the user\'s password',
       updateCapSuccess: 'Successfully updated the user\'s capabilities',
+      addingNewUser: 'Adding New User',
+      updatingPassword: 'Updating password',
+      updatingCapabilities: 'Updating capabilities',
+      deletingAccount: 'Deleting user account',
+      retrievingAccounts: 'Retrieving All users from Database',
+      retrieveAccountsFailed: 'Failed to retrieve users data from database',
     },
     about: {
       name: 'About',
@@ -45,6 +54,7 @@ export default {
       err2: 'Please enter new password',
       err3: 'Password doesn\'t match',
       changePassSuccess: 'Successfully changed password',
+      updatingPassword: 'Updating password',
     },
     settings: {
       name: 'Settings',
@@ -89,6 +99,9 @@ export default {
     Cancel: '취소',
     Confirm: '확인',
     test1: '최신 릴리스',
+    loggingOut: '로그아웃...',
+    forcedLogout: '서버에 의해 강제 로그아웃 됐습니다',
+    initializing: 'EMS 클리이언트 초기화...',
     login: {
       name: '로그인',
       str1: '로그인',
@@ -110,6 +123,12 @@ export default {
       delSuccess: '해당 사용자를 삭제 하였습니다',
       updatePassSuccess: '해당 사용자의 패스워드를 변경 하였습니다',
       updateCapSuccess: '해당 사용자의 권한을 변경 하였습니다',
+      addingNewUser: '새로운 사용자 추가 중',
+      updatingPassword: '비밀번호를 변경 하는 중',
+      updatingCapabilities: '권한을 변경 하는 중',
+      deletingAccount: '계정을 삭제 하는 중',
+      retrievingAccounts: ' 모든 사용자 계정을 로드 중',
+      retrieveAccountsFailed: '모든 사용자 계정을 로드 하는데 실패하였습니다',
     },
     userProfile: {
       name: '사용자 정보',
@@ -123,6 +142,7 @@ export default {
       err2: '새로운 비밀번호를 입력해 주십시오',
       err3: '새로운 비밀번호가 맞지 않습니다',
       changePassSuccess: '비밀번호를 변경하였습니다',
+      updatingPassword: '비밀번호를 변경 하는 중',
     },
     settings: {
       name: '설정',

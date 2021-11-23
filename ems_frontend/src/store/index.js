@@ -6,6 +6,7 @@ import User from './user';
 import Ui from './ui';
 import Settings from './settings';
 import Version from './version';
+import Languages from './lang';
 
 // const ls = new SecureLS({ isCompression: false });
 
@@ -43,6 +44,7 @@ export default new Vuex.Store({
     Ui,
     Settings,
     Version,
+    Languages,
   },
   plugins: [
     sessionStorage,

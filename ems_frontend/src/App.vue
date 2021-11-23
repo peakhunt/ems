@@ -139,7 +139,7 @@
           Warning
         </v-card-title>
         <v-card-text>
-          You are logged out by the server
+          {{ $i18n.t('forcedLogout') }}
         </v-card-text>
         <v-card-actions>
           <v-spacer></v-spacer>
@@ -148,7 +148,7 @@
            text
            @click="onLoggedOutConfirm"
           >
-            OK
+            {{ $i18n.t('Confirm') }}
           </v-btn>
         </v-card-actions>
       </v-card>
@@ -230,12 +230,17 @@ export default {
       return Promise.reject(err);
     });
   },
+  mounted() {
+    if (this.isLoggedIn !== true) return;
+
+    this.systemInitialize();
+  },
   methods: {
     logout() {
       const self = this;
 
       self.logoutInProress = true;
-      self.$store.dispatch('showProgress', 'Logging Out');
+      self.$store.dispatch('showProgress', self.$i18n.t('loggingOut'));
 
       self.$store.dispatch('logout')
         .then(() => {
@@ -260,6 +265,25 @@ export default {
       this.loggedOutDialog = false;
       this.$store.dispatch('logout_force');
       this.$router.push('/login');
+    },
+    systemInitialize() {
+      const self = this;
+
+      self.$store.dispatch('showProgress', self.$i18n.t('initializing'));
+      //
+      // FIXME
+      // DO SYSTEM INITIALIZATION HERE
+      //
+      setTimeout(() => {
+        self.$store.dispatch('closeProgress');
+      }, 3000);
+    },
+  },
+  watch: {
+    $route(to, from) {
+      if (from.path === '/login' && to.path === '/') {
+        this.systemInitialize();
+      }
     },
   },
 };

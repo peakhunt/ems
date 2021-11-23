@@ -116,7 +116,7 @@ export default {
     onAddNewUser(e) {
       const self = this;
 
-      self.$store.dispatch('showProgress', 'Adding New User');
+      self.$store.dispatch('showProgress', self.$i18n.t('userMgmt.addingNewUser'));
       self.$store.dispatch('add_new_user', e)
         .then(() => {
           self.$store.dispatch('closeProgress');
@@ -138,7 +138,7 @@ export default {
     onUpdatePassword(e) {
       const self = this;
 
-      self.$store.dispatch('showProgress', 'Updating password');
+      self.$store.dispatch('showProgress', self.$i18n.t('userMgmt.updatingPassword'));
       self.$store.dispatch('update_password_for', e)
         .then(() => {
           self.$store.dispatch('closeProgress');
@@ -159,7 +159,7 @@ export default {
     onUpdateCapabilities(e) {
       const self = this;
 
-      self.$store.dispatch('showProgress', 'Updating capabilities');
+      self.$store.dispatch('showProgress', self.$i18n.t('userMgmt.updatingCapabilities'));
 
       self.$store.dispatch('update_capabilities', e)
         .then(() => {
@@ -181,7 +181,7 @@ export default {
     onDeleteUser(e) {
       const self = this;
 
-      self.$store.dispatch('showProgress', 'Deleting a user account');
+      self.$store.dispatch('showProgress', self.$i18n.t('userMgmt.deletingAccount'));
 
       self.$store.dispatch('delete_user', e)
         .then(() => {
@@ -204,7 +204,7 @@ export default {
     getAllUsers() {
       const self = this;
 
-      self.$store.dispatch('showProgress', 'Retrieving All Users from Database');
+      self.$store.dispatch('showProgress', self.$i18n.t('userMgmt.retrievingAccounts'));
 
       self.$store.dispatch('get_all_users')
         .then((users) => {
@@ -215,7 +215,7 @@ export default {
           self.$store.dispatch('closeProgress');
           self.$store.dispatch('addToSnackbar', {
             color: 'error',
-            message: 'Failed to retrieve users data from database',
+            message: self.$i18n.t('userMgmt.retrieveAccountsFailed'),
           });
         });
     },

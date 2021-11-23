@@ -76,7 +76,7 @@ export default {
         newPassword: this.passwordData.newPassword,
       };
 
-      self.$store.dispatch('showProgress', 'Updating password');
+      self.$store.dispatch('showProgress', self.$i18n.t('userProfile.updatingPassword'));
       self.$store.dispatch('update_password', req)
         .then(() => {
           self.$store.dispatch('closeProgress');
