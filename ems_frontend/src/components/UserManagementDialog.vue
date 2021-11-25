@@ -46,7 +46,7 @@
         <v-tooltip bottom>
           <template v-slot:activator="{ on, attrs }">
             <v-btn :disabled="uinfo.admin" icon v-bind="attrs" v-on="on" @click="onDeleteUserClick">
-              <v-icon color="red">delete</v-icon>
+              <v-icon>delete</v-icon>
             </v-btn>
           </template>
           <span>{{ $t('UserManagementDialog.deleteTxt') }}</span>
