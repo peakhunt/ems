@@ -38,7 +38,7 @@
     </v-card>
 
     <v-card v-if="mode === 'Edit'">
-      <v-toolbar color="indigo" dark>
+      <v-toolbar color="primary" dark>
         <v-app-bar-nav-icon></v-app-bar-nav-icon>
         <v-toolbar-title>{{ $t('UserManagementDialog.editUserTitle') }}</v-toolbar-title>
         <v-spacer></v-spacer>

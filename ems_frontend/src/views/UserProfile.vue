@@ -3,13 +3,13 @@
     <v-container>
       <v-row justify="center" no-gutters>
         <v-col cols="6">
-          <v-card class="elevation-12">
-            <v-card-title class="text-h5">
+          <material-card color="primary" icon="password">
+            <template #title>
               {{userName}}
-            </v-card-title>
-            <v-card-subtitle>
+            </template>
+            <template #subtitle>
               {{ $t('userProfile.changePassDesc') }}
-            </v-card-subtitle>
+            </template>
             <v-card-text>
               <password-edit :requireOrgPass="true" @passwordReady="onPasswordReady"/>
             </v-card-text>
@@ -18,8 +18,7 @@
               <v-spacer></v-spacer>
               <v-btn :disabled="!passwordValid" color="primary" @click="changePassword">{{ $t('userProfile.changePass') }}</v-btn>
             </v-card-actions>
-
-          </v-card>
+          </material-card>
         </v-col>
       </v-row>
     </v-container>
@@ -27,16 +26,15 @@
     <v-container>
       <v-row justify="center" no-gutters>
         <v-col cols="6">
-          <v-card class="elevation-12">
-            <v-card-title class="text-h5">
+          <material-card color="primary" icon="person">
+            <template #title>
               {{ userName }}&nbsp;{{ $t('caps.name') }}
-            </v-card-title>
+            </template>
 
             <v-card-text>
               <capabilities-view :capFlags="userCaps" :capEditable="false"/>
             </v-card-text>
-
-          </v-card>
+          </material-card>
         </v-col>
       </v-row>
     </v-container>
@@ -47,12 +45,14 @@
 import { mapGetters } from 'vuex';
 import PasswordEdit from '../components/PasswordEdit.vue';
 import CapabilitiesView from '../components/CapabilitiesView.vue';
+import MaterialCard from '../components/MaterialCard.vue';
 
 export default {
   name: 'UserProfile',
   components: {
     PasswordEdit,
     CapabilitiesView,
+    MaterialCard,
   },
   computed: {
     ...mapGetters([

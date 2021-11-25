@@ -2,17 +2,13 @@
   <v-container>
     <v-row justify="center" no-gutters>
       <v-col cols="6">
-        <v-card>
-          <v-app-bar>
-            <v-app-bar-nav-icon></v-app-bar-nav-icon>
-            <v-toolbar-title>{{ $t('userMgmt.title') }}</v-toolbar-title>
-            <v-divider
-             class="mx-4"
-             inset
-             vertical
-            ></v-divider>
-            <v-spacer></v-spacer>
+        <material-card color="primary" icon="people">
+          <template #title>
+            {{ $t('userMgmt.title') }}
+          </template>
 
+          <template #subtitle>
+            <div align="end" justify="end">
             <v-tooltip bottom>
               <template v-slot:activator="{ on, attrs }">
                 <v-btn icon v-bind="attrs" v-on="on" @click="getAllUsers">
@@ -34,8 +30,9 @@
               </template>
               <span>{{ $t('userMgmt.addNewUser') }}</span>
             </v-tooltip>
+            </div>
+          </template>
 
-          </v-app-bar>
           <v-card-text>
             <v-simple-table dark>
               <template v-slot:default>
@@ -62,7 +59,7 @@
               </template>
             </v-simple-table>
           </v-card-text>
-        </v-card>
+        </material-card>
       </v-col>
     </v-row>
 
@@ -81,11 +78,13 @@
 
 <script>
 import UserManagementDialog from '../components/UserManagementDialog.vue';
+import MaterialCard from '../components/MaterialCard.vue';
 
 export default {
   name: 'UserManagement',
   components: {
     UserManagementDialog,
+    MaterialCard,
   },
   data: () => {
     return {

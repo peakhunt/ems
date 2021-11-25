@@ -7,8 +7,8 @@
     "level": "debug"
   },
   "web": {
-    "port":80,
-    "devPort":3000
+    "port": 80,
+    "devPort": 3000
   },
   "devMode": {
     "enabled": true

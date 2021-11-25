@@ -14,6 +14,9 @@ function webintf_init() {
     const app = express();
 
     app.use(express.static('public'));
+    app.get('/', (req, res) => {
+      res.sendfile('public/index.html');
+    });
 
     port = config.web.port;
 

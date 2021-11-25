@@ -2,13 +2,26 @@
   <v-app>
     <v-navigation-drawer v-if="isLoggedIn"
      v-model="drawer"
-     fixed
-     temporary
+     :right="$vuetify.rtl"
+     :mini-variant.sync="mini"
+     :src="false ? '' : require('@/assets/login_bg.jpg')"
+     mini-variant-width="80"
+     app
+     width="260"
+     dark
     >
+      <template #img="props">
+        <v-img gradient="rgba(0, 0, 0, .7), rgba(0, 0, 0, .7)" v-bind="props"/>
+      </template>
+
       <v-list-item>
+        <v-list-item-avatar>
+          <v-img :src="require('@/assets/vmd.svg')"/>
+        </v-list-item-avatar>
         <v-list-item-content>
           <v-list-item-title class="text-h6">
-            Scanjet EMS
+            <strong class="mr-1 font-weight-black">Scanjet</strong>
+            <span class="primary--text">EMS</span>
           </v-list-item-title>
           <v-list-item-subtitle>
             v{{ appVersion  }}
@@ -16,19 +29,20 @@
         </v-list-item-content>
       </v-list-item>
 
-      <v-divider></v-divider>
+      <v-divider class="mx-3 mb-2" />
 
       <v-list
-       dense
+       expand
        nav
       >
         <v-list-item
          v-for="item in filteredNavItems"
          :key="item.title"
          :to="item.to"
-         link
+         active-class="primary white--text"
+         class="py-1"
         >
-          <v-list-item-icon>
+          <v-list-item-icon class="my-2 align-self-center">
             <v-icon>{{ item.icon }}</v-icon>
           </v-list-item-icon>
 
@@ -37,46 +51,134 @@
           </v-list-item-content>
         </v-list-item>
       </v-list>
-      <v-divider/>
-
-      <v-list-item @click="logout">
-          <v-list-item-icon>
-            <v-icon>logout</v-icon>
-          </v-list-item-icon>
-
-          <v-list-item-content>
-            <v-list-item-title>{{ $t('logout') }}</v-list-item-title>
-          </v-list-item-content>
-      </v-list-item>
+      <div class="pt-12" />
     </v-navigation-drawer>
 
     <v-app-bar v-if="isLoggedIn"
      app
-     color="primary"
-     dark
+     absolute
+     class="v-bar--underline"
+     color="transparent"
+     :clipped-left="$vuetify.rtl"
+     :clipped-right="!$vuetify.rtl"
+     height="70"
+     flat
     >
-      <v-app-bar-nav-icon @click="drawer = !drawer"></v-app-bar-nav-icon>
+      <v-app-bar-nav-icon class="hidden-md-and-up" @click="drawer = !drawer"></v-app-bar-nav-icon>
 
-      <div class="d-flex align-center">
-        <v-img
-          alt="Vuetify Logo"
-          class="shrink mr-2"
-          contain
-          src="https://cdn.vuetifyjs.com/images/logos/vuetify-logo-dark.png"
-          transition="scale-transition"
-          width="40"
-        />
-      </div>
-      <span class="text-h5">
-        {{ currentRouteName }}
-      </span>
+      <!-- drawer toggle button -->
+      <v-btn
+       class="ml-3 mr-4 hidden-sm-and-down"
+       elevation="1"
+       fab
+       small
+       @click="mini = !mini"
+      >
+        <v-icon>
+          {{ mini ? 'format_list_bulleted' : 'more_vert' }}
+        </v-icon>
+      </v-btn>
 
-      <v-spacer></v-spacer>
+      <v-toolbar-title
+       class="font-weight-light text-h5"
+       v-text="currentRouteName"
+      />
 
-      <v-chip class="ma-2" color="primary" label @click="$router.push('/user_profile')">
-        {{ userName }}
-        <v-icon right large>account_circle</v-icon>
-      </v-chip>
+      <v-spacer/>
+
+      <search class="hidden-sm-and-down" />
+
+      <!-- go to home button -->
+      <v-btn class="ml-2" min-width="0" text to="/" eaxct>
+        <v-icon>dashboard</v-icon>
+      </v-btn>
+
+      <!-- notification button -->
+      <v-menu
+       bottom
+       left
+       offset-y
+       origin="top left"
+       transition="scale-transition"
+      >
+        <template v-slot:activator="{ attrs, on }">
+          <v-btn
+           class="ml-2"
+           min-width="0"
+           text
+           v-bind="attrs"
+           v-on="on"
+          >
+            <v-badge
+             bordered
+             color="red"
+             overlap
+            >
+              <template v-slot:badge>
+                <span>5</span>
+              </template>
+              <v-icon>notifications</v-icon>
+            </v-badge>
+          </v-btn>
+        </template>
+        <v-list
+         flat
+         nav
+        >
+          <app-bar-item2
+           v-for="(n, i) in notifications"
+           :key="i"
+          >
+            <template v-slot:content>
+              <v-list-item-content>
+                <v-list-item-title>{{ n }} </v-list-item-title>
+              </v-list-item-content>
+            </template>
+          </app-bar-item2>
+        </v-list>
+      </v-menu>
+
+      <!-- notification button -->
+      <v-menu
+       bottom
+       left
+       min-width="200"
+       offset-y
+       origin="top right"
+       transition="scale-transition"
+      >
+        <template v-slot:activator="{ attrs, on }">
+          <v-btn
+           class="ml-2"
+           min-width="0"
+           text
+           v-bind="attrs"
+           v-on="on"
+          >
+            <v-icon>person</v-icon>
+          </v-btn>
+        </template>
+
+        <v-list :tile="false" flat nav>
+          <app-bar-item2
+            to="/user_profile"
+          >
+            <template v-slot:content>
+              <v-list-item-title>{{ $i18n.t('userProfile.name') }}</v-list-item-title>
+            </template>
+          </app-bar-item2>
+          <v-divider
+            class="mb-2 mt-2"
+          />
+
+          <app-bar-item2 @click="logout">
+            <template v-slot:content>
+              <v-list-item-title>{{ $i18n.t('logout') }}</v-list-item-title>
+            </template>
+          </app-bar-item2>
+
+        </v-list>
+      </v-menu>
 
     </v-app-bar>
     <v-main>
@@ -160,8 +262,15 @@
 <script>
 
 import { mapGetters } from 'vuex';
+import AppBarItem2 from '@/components/AppBarItem2.vue';
+import Search from '@/components/Search.vue';
+// import '@/styles/overrides.sass';
 
 export default {
+  components: {
+    AppBarItem2,
+    Search,
+  },
   computed: {
     ...mapGetters([
       'isLoggedIn',
@@ -189,7 +298,8 @@ export default {
   name: 'App',
   data() {
     return {
-      drawer: false,
+      drawer: true,
+      mini: false,
       navItems: [
         {
           icon: 'home',
@@ -218,6 +328,18 @@ export default {
       ],
       loggedOutDialog: false,
       logoutInProress: false,
+      notifications: [
+        'Mike John Responded to your email',
+        'You have 5 new tasks',
+        'You\'re now friends with Andrew',
+        'Another Notification',
+        'Another one',
+      ],
+      profile: [
+        { title: 'Profile' },
+        { divider: true },
+        { title: 'Log Out' },
+      ],
     };
   },
   created() {
@@ -267,16 +389,14 @@ export default {
       this.$router.push('/login');
     },
     systemInitialize() {
+      /*
       const self = this;
 
       self.$store.dispatch('showProgress', self.$i18n.t('initializing'));
-      //
-      // FIXME
-      // DO SYSTEM INITIALIZATION HERE
-      //
       setTimeout(() => {
         self.$store.dispatch('closeProgress');
       }, 3000);
+      */
     },
   },
   watch: {
@@ -288,3 +408,6 @@ export default {
   },
 };
 </script>
+
+<style>
+</style>

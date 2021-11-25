@@ -1,6 +1,8 @@
 import Vue from 'vue';
 import Axios from 'axios';
 import VuetifySnackbarQueue from 'vuetify-snackbar-queue';
+import VueChartist from 'vue-chartist';
+import 'chartist/dist/chartist.min.css';
 import store from './store';
 //
 // i18n must be initialized after vuex so that it can
@@ -26,6 +28,7 @@ if (token !== '') {
 
 Vue.config.productionTip = false;
 
+Vue.use(VueChartist);
 Vue.use(VuetifySnackbarQueue);
 
 new Vue({
