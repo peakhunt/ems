@@ -47,7 +47,7 @@ function add_user(username, password, capabilities) {
   return new Promise((resolve, reject) => {
     db_util.get_db_connection_from_pool(pool)
     .then((conn) => {
-      conn.query(`insert into ems_users values (?, ?, ?, ?)`, [username, password, false, capabilities], (err, results) => {
+      conn.query('insert into ems_users values (?, ?, ?, ?)', [username, password, false, capabilities], (err, results) => {
         pool.releaseConnection(conn);
         if (err) return reject(ErrorCodes.ErrorUserAlreadyExist);
 
@@ -102,4 +102,4 @@ module.exports = {
   add_user,
   delete_user,
   change_user,
-}
+};

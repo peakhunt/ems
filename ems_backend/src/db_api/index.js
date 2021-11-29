@@ -3,6 +3,7 @@ const config = require('../config');
 const logger = require('../logger');
 
 const user_mgmt = require('./user_mgmt');
+const event_log = require('./event_log');
 const db_util = require('./db_util');
 
 const pool = mysql.createPool({
@@ -12,11 +13,13 @@ const pool = mysql.createPool({
   database: config.emsDB.dbName,
   connectionLimit: config.emsDB.maxConnPool,
   queueLimit: config.emsDB.queueLimit,
+  dateStrings: 'date',
 });
 
 function mysql_init() {
   return new Promise((resolve) => {
     user_mgmt.setup(pool);
+    event_log.setup(pool);
 
     process.nextTick(() => {
       resolve();
@@ -57,4 +60,5 @@ module.exports = {
   init: mysql_init,
   test,
   user_mgmt,
+  event_log,
 };
