@@ -55,8 +55,6 @@ function log_query(cond) {
     args = args.concat(cond.category);
   }
 
-  logger.info(`query = ${query}`);
-
   return new Promise((resolve, reject) => {
     db_util.get_db_connection_from_pool(pool)
     .then((conn) => {

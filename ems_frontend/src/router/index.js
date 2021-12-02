@@ -9,6 +9,7 @@ import UserManagement from '../views/UserManagement.vue';
 import UserProfile from '../views/UserProfile.vue';
 import Unauthorized from '../views/Unauthorized.vue';
 import Settings from '../views/Settings.vue';
+import EventLogs from '../views/EventLogs.vue';
 
 import Capabilities from '../Capabilities';
 
@@ -73,6 +74,15 @@ const routes = [
     path: '/settings',
     name: i18n.t('settings.name'),
     component: Settings,
+    meta: {
+      requiresAuth: true,
+      cap: 0,
+    },
+  },
+  {
+    path: '/event_logs',
+    name: i18n.t('eventLogs.name'),
+    component: EventLogs,
     meta: {
       requiresAuth: true,
       cap: 0,

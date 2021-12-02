@@ -61,6 +61,9 @@ export default {
       lang: 'Language',
       langSelTitle: 'System Language',
     },
+    eventLogs: {
+      name: 'Event Logs',
+    },
     UserManagementDialog: {
       title: 'Add New User',
       userInfo: 'User Info',
@@ -148,6 +151,9 @@ export default {
       name: '설정',
       lang: '언어',
       langSelTitle: '시스템 언어',
+    },
+    eventLogs: {
+      name: '이벤트 로그',
     },
     about: {
       name: 'S/W 정보',

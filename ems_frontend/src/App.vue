@@ -320,6 +320,12 @@ export default {
           cap: this.$router.options.routes[5].meta.cap,
         },
         {
+          icon: 'event',
+          title: this.$i18n.t('eventLogs.name'),
+          to: '/event_logs',
+          cap: this.$router.options.routes[6].meta.cap,
+        },
+        {
           icon: 'apps',
           title: this.$i18n.t('about.name'),
           to: '/about',

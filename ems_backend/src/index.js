@@ -16,6 +16,9 @@ dbAPI.init()
 })
 .then(() => {
   logger.info("EMS Server. Startup Complete!");
+  dbAPI.event_log.log_info("EMS Server. Startup Complete!");
+  dbAPI.event_log.log_warning("Sample warning event!");
+  dbAPI.event_log.log_error("Sample error event!");
 })
 .catch(() => {
   logger.error("EMS Server. startup failed. Aborting!");

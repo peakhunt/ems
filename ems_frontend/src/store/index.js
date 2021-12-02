@@ -7,6 +7,7 @@ import Ui from './ui';
 import Settings from './settings';
 import Version from './version';
 import Languages from './lang';
+import EventLog from './event_log';
 
 // const ls = new SecureLS({ isCompression: false });
 
@@ -45,6 +46,7 @@ export default new Vuex.Store({
     Settings,
     Version,
     Languages,
+    EventLog,
   },
   plugins: [
     sessionStorage,
