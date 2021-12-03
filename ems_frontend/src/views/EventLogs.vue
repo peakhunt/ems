@@ -24,7 +24,7 @@
                       <template v-slot:activator="{ on, attrs }">
                         <v-text-field
                          v-model="dateRangeText"
-                         label="Please select range of dates"
+                         :label="$i18n.t('eventLogs.datePickerLabel')"
                          prepend-icon="date_range"
                          readonly
                          v-bind="attrs"
@@ -35,6 +35,7 @@
                       <v-date-picker
                        v-model="dates"
                        no-title
+                       :locale="$i18n.locale"
                        range
                        @change="onDatePickerChange"
                       >
@@ -45,7 +46,7 @@
                     <v-text-field
                      v-model="search"
                      append-icon="search"
-                     label="Search"
+                     :label="$i18n.t('eventLogs.search')"
                      single-line
                      hide-details
                     ></v-text-field>
@@ -59,7 +60,7 @@
               :headers="headers"
               :items="items"
               :search="search"
-              class="elevation-7"
+              class="elevation-6"
             >
               <template v-slot:item.category="{ item }">
                 <v-chip
@@ -88,12 +89,12 @@ export default {
   computed: {
     dateRangeText() {
       if (this.dates.length !== 2) {
-        return 'Please select range';
+        return this.$i18n.t('eventLogs.datePickerLabel');
       }
       return this.dates.join(' ~ ');
     },
   },
-  data: () => {
+  data() {
     return {
       showDatePicker: false,
       dates: [],
@@ -101,20 +102,20 @@ export default {
       headers: [
         {
           sortable: true,
-          text: 'time',
+          text: this.$i18n.t('eventLogs.time'),
           value: 'time',
           width: 200,
         },
         {
           sortable: true,
-          text: 'category',
+          text: this.$i18n.t('eventLogs.category'),
           value: 'category',
           width: 150,
           align: 'center',
         },
         {
           sortable: false,
-          text: 'description',
+          text: this.$i18n.t('eventLogs.description'),
           value: 'description',
         },
       ],
@@ -144,7 +145,7 @@ export default {
       };
 
       self.showDatePicker = false;
-      self.$store.dispatch('showProgress', 'Retrieving Event Logs');
+      self.$store.dispatch('showProgress', self.$i18n.t('eventLogs.retrieving'));
 
       self.$store.dispatch('get_event_logs', cond)
         .then((result) => {
@@ -155,7 +156,7 @@ export default {
           self.$store.dispatch('closeProgress');
           self.$store.dispatch('addToSnackbar', {
             color: 'error',
-            message: 'Failed to retrieve event logs',
+            message: self.$i18n.t('eventLogs.retrieveFailed'),
           });
         });
     },

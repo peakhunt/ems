@@ -63,6 +63,13 @@ export default {
     },
     eventLogs: {
       name: 'Event Logs',
+      datePickerLabel: 'Please select range of dates',
+      search: 'Search',
+      time: 'Time',
+      category: 'Category',
+      description: 'Description',
+      retrieving: 'Retrieving Event Logs',
+      retrieveFailed: 'Failed to retrieve event logs',
     },
     UserManagementDialog: {
       title: 'Add New User',
@@ -96,7 +103,7 @@ export default {
       [Capabilities.CapTest3]: 'Test3',
     },
   },
-  kr: {
+  ko: {
     Yes: '예',
     No: '아니오',
     Cancel: '취소',
@@ -154,6 +161,13 @@ export default {
     },
     eventLogs: {
       name: '이벤트 로그',
+      datePickerLabel: '조회할 날짜를 선택',
+      search: '검색',
+      time: '시간',
+      category: '구분',
+      description: '내역',
+      retrieving: '이벤트 내역 조회중',
+      retrieveFailed: '이벤트 내역 조회 실패',
     },
     about: {
       name: 'S/W 정보',
