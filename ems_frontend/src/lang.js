@@ -11,6 +11,7 @@ export default {
     loggingOut: 'Logging Out',
     forcedLogout: 'You are logged out by the server',
     initializing: 'Initializing EMS Client...',
+    welcome: 'Scanjet EMS',
     login: {
       name: 'Login',
       str1: 'Login',
@@ -112,6 +113,7 @@ export default {
     loggingOut: '로그아웃...',
     forcedLogout: '서버에 의해 강제 로그아웃 됐습니다',
     initializing: 'EMS 클리이언트 초기화...',
+    welcome: 'Scanjet EMS',
     login: {
       name: '로그인',
       str1: '로그인',

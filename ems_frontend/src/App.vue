@@ -395,14 +395,16 @@ export default {
       this.$router.push('/login');
     },
     systemInitialize() {
-      /*
       const self = this;
 
       self.$store.dispatch('showProgress', self.$i18n.t('initializing'));
-      setTimeout(() => {
-        self.$store.dispatch('closeProgress');
-      }, 3000);
-      */
+      self.$store.dispatch('get_sys_info')
+        .then(() => {
+          self.$store.dispatch('closeProgress');
+        })
+        .catch(() => {
+          self.$store.dispatch('closeProgress');
+        });
     },
   },
   watch: {
