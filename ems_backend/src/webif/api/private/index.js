@@ -3,6 +3,7 @@ const hello = require('./hello');
 const logout = require('./logout');
 const user_mgmt = require('./user_mgmt');
 const event_log = require('./event_log');
+const info = require('./info');
 
 function authorize(req, res, next) {
   if (!req.headers.authorization) {
@@ -25,6 +26,7 @@ function private_api_init(router) {
   logout(router);
   user_mgmt(router);
   event_log(router);
+  info(router);
 }
 
 module.exports = private_api_init;
