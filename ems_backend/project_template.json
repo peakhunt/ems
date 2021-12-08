@@ -1,0 +1,42 @@
+{
+  "info": {
+    "name": "blah blah blah project",
+    "schema": "0.1"
+  },
+  "sources": [
+  ],
+  "alarms": [
+    {
+      "id": "alm-1",
+      "name": "test analog alarm #1",
+      "source": 1234,
+      "type": "high",
+      "set_point": 123.4,
+      "delay": 0.1
+    },
+    {
+      "id": "alm-2",
+      "name": "test analog alarm #2",
+      "source": 4321,
+      "type": "low",
+      "set_point": -1.4,
+      "delay": 0
+    },
+    {
+      "id": "alm-3",
+      "name": "test digital alarm #3",
+      "source": 1122,
+      "type": "onoff",
+      "set_point": "on",
+      "delay": 0
+    },
+    {
+      "id": "alm-4",
+      "name": "test digital alarm #4",
+      "source": 2211,
+      "type": "onoff",
+      "set_point": "off",
+      "delay": 1
+    }
+  ]
+}

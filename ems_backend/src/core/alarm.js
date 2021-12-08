@@ -9,22 +9,14 @@ const AlarmState = {
 };
 
 function Alarm(config, source) {
-  /*
-    config : {
-      id: XXX,
-      name: 'XXX',
-      severity: XXX,
-    }
-  */
   EventEmitter.call(this);
 
   this._config = config;
-
   this._source = source;
-  this._source.on('valueChange', () => {
-  });
 
   this._state = AlarmState.Inactive;
+
+  this._alarm_time = new Date();
 }
 
 function moveState(alarm, ns) {
@@ -42,12 +34,16 @@ Alarm.prototype = {
   get config() {
     return this._config;
   },
+  get alarmTime() {
+    return this._alarm_time;
+  },
   //
   // alarm events
   //
   occur() {
     switch (this._stsate) {
       case AlarmState.Inactive:
+        this._alarm_time = new Date();
         moveState(this, AlarmState.PendingActive);
         break;
 

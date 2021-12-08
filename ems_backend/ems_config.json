@@ -20,5 +20,6 @@
     "dbName": "ems",
     "maxConnPool": 100,
     "queueLimit" : 0
-  }
+  },
+  "project": "./project_template.json"
 }
