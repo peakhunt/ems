@@ -3,6 +3,7 @@ require("dotenv").config();
 const web_if = require('./webif');
 const logger = require("./logger");
 const dbAPI = require('./db_api');
+const core = require('./core');
 
 logger.info("starting EMS server");
 dbAPI.init()
@@ -11,7 +12,11 @@ dbAPI.init()
   return dbAPI.test();
 })
 .then(() => {
-  logger.info("testing db connection success. initializing web interface");
+  logger.info("testing db connection success. initializing core");
+  return core.init();
+})
+.then(() => {
+  logger.info("core initialized. initializing web interface");
   return web_if();
 })
 .then(() => {
@@ -20,7 +25,7 @@ dbAPI.init()
   dbAPI.event_log.log_warning("Sample warning event!");
   dbAPI.event_log.log_error("Sample error event!");
 })
-.catch(() => {
-  logger.error("EMS Server. startup failed. Aborting!");
+.catch((e) => {
+  logger.error(`EMS Server. startup failed. Aborting! ${e}`);
   process.exit(-1);
 });

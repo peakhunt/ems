@@ -326,6 +326,12 @@ export default {
           cap: this.$router.options.routes[6].meta.cap,
         },
         {
+          icon: 'notifications',
+          title: this.$i18n.t('alarms.name'),
+          to: '/alarms',
+          cap: this.$router.options.routes[7].meta.cap,
+        },
+        {
           icon: 'apps',
           title: this.$i18n.t('about.name'),
           to: '/about',

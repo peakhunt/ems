@@ -10,6 +10,7 @@ import UserProfile from '../views/UserProfile.vue';
 import Unauthorized from '../views/Unauthorized.vue';
 import Settings from '../views/Settings.vue';
 import EventLogs from '../views/EventLogs.vue';
+import Alarms from '../views/Alarms.vue';
 
 import Capabilities from '../Capabilities';
 
@@ -83,6 +84,15 @@ const routes = [
     path: '/event_logs',
     name: i18n.t('eventLogs.name'),
     component: EventLogs,
+    meta: {
+      requiresAuth: true,
+      cap: 0,
+    },
+  },
+  {
+    path: '/alarms',
+    name: i18n.t('alarms.name'),
+    component: Alarms,
     meta: {
       requiresAuth: true,
       cap: 0,

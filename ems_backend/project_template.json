@@ -3,13 +3,45 @@
     "name": "blah blah blah project",
     "schema": "0.1"
   },
-  "sources": [
+  "channels": [
+    {
+      "id": "chnl-1",
+      "name": "blah blah blah name",
+      "type": "analog",
+      "source": {
+        "location": "protocol specific"
+      }
+    },
+    {
+      "id": "chnl-2",
+      "name": "blah blah blah name",
+      "type": "analog",
+      "source": {
+        "location": "protocol specific"
+      }
+    },
+    {
+      "id": "chnl-3",
+      "name": "blah blah blah name",
+      "type": "digital",
+      "source": {
+        "location": "protocol specific"
+      }
+    },
+    {
+      "id": "chnl-4",
+      "name": "blah blah blah name",
+      "type": "digital",
+      "source": {
+        "location": "protocol specific"
+      }
+    }
   ],
   "alarms": [
     {
       "id": "alm-1",
       "name": "test analog alarm #1",
-      "source": 1234,
+      "channel": "chnl-1",
       "type": "high",
       "set_point": 123.4,
       "delay": 0.1
@@ -17,7 +49,7 @@
     {
       "id": "alm-2",
       "name": "test analog alarm #2",
-      "source": 4321,
+      "channel": "chnl-2",
       "type": "low",
       "set_point": -1.4,
       "delay": 0
@@ -25,17 +57,17 @@
     {
       "id": "alm-3",
       "name": "test digital alarm #3",
-      "source": 1122,
+      "channel": "chnl-3",
       "type": "onoff",
-      "set_point": "on",
+      "set_point": true,
       "delay": 0
     },
     {
       "id": "alm-4",
       "name": "test digital alarm #4",
-      "source": 2211,
+      "channel": "chnl-4",
       "type": "onoff",
-      "set_point": "off",
+      "set_point": false,
       "delay": 1
     }
   ]

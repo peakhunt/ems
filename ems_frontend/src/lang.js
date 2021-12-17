@@ -72,6 +72,14 @@ export default {
       retrieving: 'Retrieving Event Logs',
       retrieveFailed: 'Failed to retrieve event logs',
     },
+    alarms: {
+      name: 'Current Alarms',
+      caption: 'Current Alarm List',
+      code: 'Alarm Code',
+      time: 'Time',
+      severity: 'Severity',
+      description: 'Description',
+    },
     UserManagementDialog: {
       title: 'Add New User',
       userInfo: 'User Info',
@@ -170,6 +178,14 @@ export default {
       description: '내역',
       retrieving: '이벤트 내역 조회중',
       retrieveFailed: '이벤트 내역 조회 실패',
+    },
+    alarms: {
+      name: '장애',
+      caption: '현재 장애 내역',
+      code: '장애 코드',
+      time: '발생시간',
+      severity: '등급',
+      description: '내역',
     },
     about: {
       name: 'S/W 정보',

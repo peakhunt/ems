@@ -8,6 +8,42 @@ const AlarmState = {
   Active: 3,
 };
 
+function checkAlarm(alarm, source) {
+  //
+  // FIXME time delay
+  //
+  let v = source.value;
+
+  switch(alarm._config.type) {
+    case 'high':
+      if (v >= alarm._config.set_point) {
+        alarm.occur();
+      } else {
+        alarm.clear();
+      }
+      break;
+
+    case 'low':
+      if (v <= alarm._config.set_point) {
+        alarm.occur();
+      } else {
+        alarm.clear();
+      }
+      break;
+
+    case 'onoff':
+      if (v === alarm._config.set_point) {
+        alarm.occur();
+      } else {
+        alarm.clear();
+      }
+      break;
+
+    default:
+      break;
+  }
+}
+
 function Alarm(config, source) {
   EventEmitter.call(this);
 
@@ -17,6 +53,10 @@ function Alarm(config, source) {
   this._state = AlarmState.Inactive;
 
   this._alarm_time = new Date();
+
+  this._source.on('valueChanged', () => {
+    checkAlarm(this, this._source);
+  });
 }
 
 function moveState(alarm, ns) {
