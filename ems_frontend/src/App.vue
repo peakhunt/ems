@@ -24,6 +24,9 @@
             <span class="primary--text">EMS</span>
           </v-list-item-title>
           <v-list-item-subtitle>
+            {{ projectName }}
+          </v-list-item-subtitle>
+          <v-list-item-subtitle>
             v{{ appVersion  }}
           </v-list-item-subtitle>
         </v-list-item-content>
@@ -282,6 +285,7 @@ export default {
       'progress_overlay_msg',
       'snackbar_queue_items',
       'appVersion',
+      'projectName',
     ]),
     currentRouteName() {
       return this.$route.name;

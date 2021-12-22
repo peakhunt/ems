@@ -13,6 +13,9 @@
               <v-container class="text-h4 font-weight-light">
                 <v-row justify="space-between">
                   <v-col cols="6">
+                    <div class="text-h3 font-weight-light">
+                      Software Info
+                    </div>
                   </v-col>
                   <v-col cols="3">
                   </v-col>
@@ -70,6 +73,14 @@ export default {
         {
           name: 'Server S/W Version',
           value: this.$store.getters.sysVersion,
+        },
+        {
+          name: 'Project Name',
+          value: this.$store.getters.projectName,
+        },
+        {
+          name: 'Project Schema',
+          value: this.$store.getters.projectSchema,
         },
       ],
     };

@@ -1,5 +1,6 @@
+const dateFormat = require('dateformat');
 // const logger = require("../logger");
-const project = require('./project');
+const project = require('../project');
 const Channel = require('./channel');
 const Alarm = require('./alarm');
 
@@ -50,6 +51,20 @@ function init() {
   });
 }
 
+function getAlarmStates() {
+  const alarms = [];
+
+  for (const alarm in _alarms) {
+    alarms.push({
+      id: alarm.config.id,
+      state: alarm.state,
+      time: dateFormat(alarm.alarmTime, 'yyyy-mm-dd HH-MM-ss'),
+    });
+  }
+  return alarms;
+}
+
 module.exports = {
   init,
+  getAlarmStates,
 };

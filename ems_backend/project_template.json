@@ -1,6 +1,6 @@
 {
   "info": {
-    "name": "blah blah blah project",
+    "name": "project template",
     "schema": "0.1"
   },
   "channels": [
@@ -44,7 +44,8 @@
       "channel": "chnl-1",
       "type": "high",
       "set_point": 123.4,
-      "delay": 0.1
+      "delay": 0.1,
+      "severity": "minor"
     },
     {
       "id": "alm-2",
@@ -52,7 +53,8 @@
       "channel": "chnl-2",
       "type": "low",
       "set_point": -1.4,
-      "delay": 0
+      "delay": 0,
+      "severity": "major"
     },
     {
       "id": "alm-3",
@@ -60,7 +62,8 @@
       "channel": "chnl-3",
       "type": "onoff",
       "set_point": true,
-      "delay": 0
+      "delay": 0,
+      "severity": "critical"
     },
     {
       "id": "alm-4",
@@ -68,7 +71,872 @@
       "channel": "chnl-4",
       "type": "onoff",
       "set_point": false,
-      "delay": 1
+      "delay": 1,
+      "severity": "minor"
+    },
+    {
+      "id": "alm-5",
+      "name": "test digital alarm #5",
+      "channel": "chnl-4",
+      "type": "onoff",
+      "set_point": false,
+      "delay": 1,
+      "severity": "minor"
+    },
+    {
+      "id": "alm-6",
+      "name": "test digital alarm #6",
+      "channel": "chnl-4",
+      "type": "onoff",
+      "set_point": false,
+      "delay": 1,
+      "severity": "minor"
+    },
+    {
+      "id": "alm-7",
+      "name": "test digital alarm #7",
+      "channel": "chnl-4",
+      "type": "onoff",
+      "set_point": false,
+      "delay": 1,
+      "severity": "minor"
+    },
+    {
+      "id": "alm-8",
+      "name": "test digital alarm #8",
+      "channel": "chnl-4",
+      "type": "onoff",
+      "set_point": false,
+      "delay": 1,
+      "severity": "minor"
+    },
+    {
+      "id": "alm-9",
+      "name": "test digital alarm #9",
+      "channel": "chnl-4",
+      "type": "onoff",
+      "set_point": false,
+      "delay": 1,
+      "severity": "minor"
+    },
+    {
+      "id": "alm-10",
+      "name": "test digital alarm #10",
+      "channel": "chnl-4",
+      "type": "onoff",
+      "set_point": false,
+      "delay": 1,
+      "severity": "minor"
+    },
+    {
+      "id": "alm-11",
+      "name": "test digital alarm #11",
+      "channel": "chnl-4",
+      "type": "onoff",
+      "set_point": false,
+      "delay": 1,
+      "severity": "minor"
+    },
+    {
+      "id": "alm-12",
+      "name": "test digital alarm #12",
+      "channel": "chnl-4",
+      "type": "onoff",
+      "set_point": false,
+      "delay": 1,
+      "severity": "minor"
+    },
+    {
+      "id": "alm-13",
+      "name": "test digital alarm #13",
+      "channel": "chnl-4",
+      "type": "onoff",
+      "set_point": false,
+      "delay": 1,
+      "severity": "minor"
+    },
+    {
+      "id": "alm-14",
+      "name": "test digital alarm #14",
+      "channel": "chnl-4",
+      "type": "onoff",
+      "set_point": false,
+      "delay": 1,
+      "severity": "minor"
+    },
+    {
+      "id": "alm-15",
+      "name": "test digital alarm #15",
+      "channel": "chnl-4",
+      "type": "onoff",
+      "set_point": false,
+      "delay": 1,
+      "severity": "minor"
+    },
+    {
+      "id": "alm-16",
+      "name": "test digital alarm #16",
+      "channel": "chnl-4",
+      "type": "onoff",
+      "set_point": false,
+      "delay": 1,
+      "severity": "minor"
+    },
+    {
+      "id": "alm-17",
+      "name": "test digital alarm #17",
+      "channel": "chnl-4",
+      "type": "onoff",
+      "set_point": false,
+      "delay": 1,
+      "severity": "minor"
+    },
+    {
+      "id": "alm-18",
+      "name": "test digital alarm #18",
+      "channel": "chnl-4",
+      "type": "onoff",
+      "set_point": false,
+      "delay": 1,
+      "severity": "minor"
+    },
+    {
+      "id": "alm-19",
+      "name": "test digital alarm #19",
+      "channel": "chnl-4",
+      "type": "onoff",
+      "set_point": false,
+      "delay": 1,
+      "severity": "minor"
+    },
+    {
+      "id": "alm-20",
+      "name": "test digital alarm #20",
+      "channel": "chnl-4",
+      "type": "onoff",
+      "set_point": false,
+      "delay": 1,
+      "severity": "minor"
+    },
+    {
+      "id": "alm-21",
+      "name": "test digital alarm #21",
+      "channel": "chnl-4",
+      "type": "onoff",
+      "set_point": false,
+      "delay": 1,
+      "severity": "minor"
+    },
+    {
+      "id": "alm-22",
+      "name": "test digital alarm #22",
+      "channel": "chnl-4",
+      "type": "onoff",
+      "set_point": false,
+      "delay": 1,
+      "severity": "minor"
+    },
+    {
+      "id": "alm-23",
+      "name": "test digital alarm #23",
+      "channel": "chnl-4",
+      "type": "onoff",
+      "set_point": false,
+      "delay": 1,
+      "severity": "minor"
+    },
+    {
+      "id": "alm-24",
+      "name": "test digital alarm #24",
+      "channel": "chnl-4",
+      "type": "onoff",
+      "set_point": false,
+      "delay": 1,
+      "severity": "minor"
+    },
+    {
+      "id": "alm-25",
+      "name": "test digital alarm #25",
+      "channel": "chnl-4",
+      "type": "onoff",
+      "set_point": false,
+      "delay": 1,
+      "severity": "minor"
+    },
+    {
+      "id": "alm-26",
+      "name": "test digital alarm #26",
+      "channel": "chnl-4",
+      "type": "onoff",
+      "set_point": false,
+      "delay": 1,
+      "severity": "minor"
+    },
+    {
+      "id": "alm-27",
+      "name": "test digital alarm #27",
+      "channel": "chnl-4",
+      "type": "onoff",
+      "set_point": false,
+      "delay": 1,
+      "severity": "minor"
+    },
+    {
+      "id": "alm-28",
+      "name": "test digital alarm #28",
+      "channel": "chnl-4",
+      "type": "onoff",
+      "set_point": false,
+      "delay": 1,
+      "severity": "minor"
+    },
+    {
+      "id": "alm-29",
+      "name": "test digital alarm #29",
+      "channel": "chnl-4",
+      "type": "onoff",
+      "set_point": false,
+      "delay": 1,
+      "severity": "minor"
+    },
+    {
+      "id": "alm-30",
+      "name": "test digital alarm #30",
+      "channel": "chnl-4",
+      "type": "onoff",
+      "set_point": false,
+      "delay": 1,
+      "severity": "minor"
+    },
+    {
+      "id": "alm-31",
+      "name": "test digital alarm #31",
+      "channel": "chnl-4",
+      "type": "onoff",
+      "set_point": false,
+      "delay": 1,
+      "severity": "minor"
+    },
+    {
+      "id": "alm-32",
+      "name": "test digital alarm #32",
+      "channel": "chnl-4",
+      "type": "onoff",
+      "set_point": false,
+      "delay": 1,
+      "severity": "minor"
+    },
+    {
+      "id": "alm-33",
+      "name": "test digital alarm #33",
+      "channel": "chnl-4",
+      "type": "onoff",
+      "set_point": false,
+      "delay": 1,
+      "severity": "minor"
+    },
+    {
+      "id": "alm-34",
+      "name": "test digital alarm #34",
+      "channel": "chnl-4",
+      "type": "onoff",
+      "set_point": false,
+      "delay": 1,
+      "severity": "minor"
+    },
+    {
+      "id": "alm-35",
+      "name": "test digital alarm #35",
+      "channel": "chnl-4",
+      "type": "onoff",
+      "set_point": false,
+      "delay": 1,
+      "severity": "minor"
+    },
+    {
+      "id": "alm-36",
+      "name": "test digital alarm #36",
+      "channel": "chnl-4",
+      "type": "onoff",
+      "set_point": false,
+      "delay": 1,
+      "severity": "minor"
+    },
+    {
+      "id": "alm-37",
+      "name": "test digital alarm #37",
+      "channel": "chnl-4",
+      "type": "onoff",
+      "set_point": false,
+      "delay": 1,
+      "severity": "minor"
+    },
+    {
+      "id": "alm-38",
+      "name": "test digital alarm #38",
+      "channel": "chnl-4",
+      "type": "onoff",
+      "set_point": false,
+      "delay": 1,
+      "severity": "minor"
+    },
+    {
+      "id": "alm-39",
+      "name": "test digital alarm #39",
+      "channel": "chnl-4",
+      "type": "onoff",
+      "set_point": false,
+      "delay": 1,
+      "severity": "minor"
+    },
+    {
+      "id": "alm-40",
+      "name": "test digital alarm #40",
+      "channel": "chnl-4",
+      "type": "onoff",
+      "set_point": false,
+      "delay": 1,
+      "severity": "minor"
+    },
+    {
+      "id": "alm-41",
+      "name": "test digital alarm #41",
+      "channel": "chnl-4",
+      "type": "onoff",
+      "set_point": false,
+      "delay": 1,
+      "severity": "minor"
+    },
+    {
+      "id": "alm-42",
+      "name": "test digital alarm #42",
+      "channel": "chnl-4",
+      "type": "onoff",
+      "set_point": false,
+      "delay": 1,
+      "severity": "minor"
+    },
+    {
+      "id": "alm-43",
+      "name": "test digital alarm #43",
+      "channel": "chnl-4",
+      "type": "onoff",
+      "set_point": false,
+      "delay": 1,
+      "severity": "minor"
+    },
+    {
+      "id": "alm-44",
+      "name": "test digital alarm #44",
+      "channel": "chnl-4",
+      "type": "onoff",
+      "set_point": false,
+      "delay": 1,
+      "severity": "minor"
+    },
+    {
+      "id": "alm-45",
+      "name": "test digital alarm #45",
+      "channel": "chnl-4",
+      "type": "onoff",
+      "set_point": false,
+      "delay": 1,
+      "severity": "minor"
+    },
+    {
+      "id": "alm-46",
+      "name": "test digital alarm #46",
+      "channel": "chnl-4",
+      "type": "onoff",
+      "set_point": false,
+      "delay": 1,
+      "severity": "minor"
+    },
+    {
+      "id": "alm-47",
+      "name": "test digital alarm #47",
+      "channel": "chnl-4",
+      "type": "onoff",
+      "set_point": false,
+      "delay": 1,
+      "severity": "minor"
+    },
+    {
+      "id": "alm-48",
+      "name": "test digital alarm #48",
+      "channel": "chnl-4",
+      "type": "onoff",
+      "set_point": false,
+      "delay": 1,
+      "severity": "minor"
+    },
+    {
+      "id": "alm-49",
+      "name": "test digital alarm #49",
+      "channel": "chnl-4",
+      "type": "onoff",
+      "set_point": false,
+      "delay": 1,
+      "severity": "minor"
+    },
+    {
+      "id": "alm-50",
+      "name": "test digital alarm #50",
+      "channel": "chnl-4",
+      "type": "onoff",
+      "set_point": false,
+      "delay": 1,
+      "severity": "minor"
+    },
+    {
+      "id": "alm-51",
+      "name": "test digital alarm #51",
+      "channel": "chnl-4",
+      "type": "onoff",
+      "set_point": false,
+      "delay": 1,
+      "severity": "minor"
+    },
+    {
+      "id": "alm-52",
+      "name": "test digital alarm #52",
+      "channel": "chnl-4",
+      "type": "onoff",
+      "set_point": false,
+      "delay": 1,
+      "severity": "minor"
+    },
+    {
+      "id": "alm-53",
+      "name": "test digital alarm #53",
+      "channel": "chnl-4",
+      "type": "onoff",
+      "set_point": false,
+      "delay": 1,
+      "severity": "minor"
+    },
+    {
+      "id": "alm-54",
+      "name": "test digital alarm #54",
+      "channel": "chnl-4",
+      "type": "onoff",
+      "set_point": false,
+      "delay": 1,
+      "severity": "minor"
+    },
+    {
+      "id": "alm-55",
+      "name": "test digital alarm #55",
+      "channel": "chnl-4",
+      "type": "onoff",
+      "set_point": false,
+      "delay": 1,
+      "severity": "minor"
+    },
+    {
+      "id": "alm-56",
+      "name": "test digital alarm #56",
+      "channel": "chnl-4",
+      "type": "onoff",
+      "set_point": false,
+      "delay": 1,
+      "severity": "minor"
+    },
+    {
+      "id": "alm-57",
+      "name": "test digital alarm #57",
+      "channel": "chnl-4",
+      "type": "onoff",
+      "set_point": false,
+      "delay": 1,
+      "severity": "minor"
+    },
+    {
+      "id": "alm-58",
+      "name": "test digital alarm #58",
+      "channel": "chnl-4",
+      "type": "onoff",
+      "set_point": false,
+      "delay": 1,
+      "severity": "minor"
+    },
+    {
+      "id": "alm-59",
+      "name": "test digital alarm #59",
+      "channel": "chnl-4",
+      "type": "onoff",
+      "set_point": false,
+      "delay": 1,
+      "severity": "minor"
+    },
+    {
+      "id": "alm-60",
+      "name": "test digital alarm #60",
+      "channel": "chnl-4",
+      "type": "onoff",
+      "set_point": false,
+      "delay": 1,
+      "severity": "minor"
+    },
+    {
+      "id": "alm-61",
+      "name": "test digital alarm #61",
+      "channel": "chnl-4",
+      "type": "onoff",
+      "set_point": false,
+      "delay": 1,
+      "severity": "minor"
+    },
+    {
+      "id": "alm-62",
+      "name": "test digital alarm #62",
+      "channel": "chnl-4",
+      "type": "onoff",
+      "set_point": false,
+      "delay": 1,
+      "severity": "minor"
+    },
+    {
+      "id": "alm-63",
+      "name": "test digital alarm #63",
+      "channel": "chnl-4",
+      "type": "onoff",
+      "set_point": false,
+      "delay": 1,
+      "severity": "minor"
+    },
+    {
+      "id": "alm-64",
+      "name": "test digital alarm #64",
+      "channel": "chnl-4",
+      "type": "onoff",
+      "set_point": false,
+      "delay": 1,
+      "severity": "minor"
+    },
+    {
+      "id": "alm-65",
+      "name": "test digital alarm #65",
+      "channel": "chnl-4",
+      "type": "onoff",
+      "set_point": false,
+      "delay": 1,
+      "severity": "minor"
+    },
+    {
+      "id": "alm-66",
+      "name": "test digital alarm #66",
+      "channel": "chnl-4",
+      "type": "onoff",
+      "set_point": false,
+      "delay": 1,
+      "severity": "minor"
+    },
+    {
+      "id": "alm-67",
+      "name": "test digital alarm #67",
+      "channel": "chnl-4",
+      "type": "onoff",
+      "set_point": false,
+      "delay": 1,
+      "severity": "minor"
+    },
+    {
+      "id": "alm-68",
+      "name": "test digital alarm #68",
+      "channel": "chnl-4",
+      "type": "onoff",
+      "set_point": false,
+      "delay": 1,
+      "severity": "minor"
+    },
+    {
+      "id": "alm-69",
+      "name": "test digital alarm #69",
+      "channel": "chnl-4",
+      "type": "onoff",
+      "set_point": false,
+      "delay": 1,
+      "severity": "minor"
+    },
+    {
+      "id": "alm-70",
+      "name": "test digital alarm #70",
+      "channel": "chnl-4",
+      "type": "onoff",
+      "set_point": false,
+      "delay": 1,
+      "severity": "minor"
+    },
+    {
+      "id": "alm-71",
+      "name": "test digital alarm #71",
+      "channel": "chnl-4",
+      "type": "onoff",
+      "set_point": false,
+      "delay": 1,
+      "severity": "minor"
+    },
+    {
+      "id": "alm-72",
+      "name": "test digital alarm #72",
+      "channel": "chnl-4",
+      "type": "onoff",
+      "set_point": false,
+      "delay": 1,
+      "severity": "minor"
+    },
+    {
+      "id": "alm-73",
+      "name": "test digital alarm #73",
+      "channel": "chnl-4",
+      "type": "onoff",
+      "set_point": false,
+      "delay": 1,
+      "severity": "minor"
+    },
+    {
+      "id": "alm-74",
+      "name": "test digital alarm #74",
+      "channel": "chnl-4",
+      "type": "onoff",
+      "set_point": false,
+      "delay": 1,
+      "severity": "minor"
+    },
+    {
+      "id": "alm-75",
+      "name": "test digital alarm #75",
+      "channel": "chnl-4",
+      "type": "onoff",
+      "set_point": false,
+      "delay": 1,
+      "severity": "minor"
+    },
+    {
+      "id": "alm-76",
+      "name": "test digital alarm #76",
+      "channel": "chnl-4",
+      "type": "onoff",
+      "set_point": false,
+      "delay": 1,
+      "severity": "minor"
+    },
+    {
+      "id": "alm-77",
+      "name": "test digital alarm #77",
+      "channel": "chnl-4",
+      "type": "onoff",
+      "set_point": false,
+      "delay": 1,
+      "severity": "minor"
+    },
+    {
+      "id": "alm-78",
+      "name": "test digital alarm #78",
+      "channel": "chnl-4",
+      "type": "onoff",
+      "set_point": false,
+      "delay": 1,
+      "severity": "minor"
+    },
+    {
+      "id": "alm-79",
+      "name": "test digital alarm #79",
+      "channel": "chnl-4",
+      "type": "onoff",
+      "set_point": false,
+      "delay": 1,
+      "severity": "minor"
+    },
+    {
+      "id": "alm-80",
+      "name": "test digital alarm #80",
+      "channel": "chnl-4",
+      "type": "onoff",
+      "set_point": false,
+      "delay": 1,
+      "severity": "minor"
+    },
+    {
+      "id": "alm-81",
+      "name": "test digital alarm #81",
+      "channel": "chnl-4",
+      "type": "onoff",
+      "set_point": false,
+      "delay": 1,
+      "severity": "minor"
+    },
+    {
+      "id": "alm-82",
+      "name": "test digital alarm #82",
+      "channel": "chnl-4",
+      "type": "onoff",
+      "set_point": false,
+      "delay": 1,
+      "severity": "minor"
+    },
+    {
+      "id": "alm-83",
+      "name": "test digital alarm #83",
+      "channel": "chnl-4",
+      "type": "onoff",
+      "set_point": false,
+      "delay": 1,
+      "severity": "minor"
+    },
+    {
+      "id": "alm-84",
+      "name": "test digital alarm #84",
+      "channel": "chnl-4",
+      "type": "onoff",
+      "set_point": false,
+      "delay": 1,
+      "severity": "minor"
+    },
+    {
+      "id": "alm-85",
+      "name": "test digital alarm #85",
+      "channel": "chnl-4",
+      "type": "onoff",
+      "set_point": false,
+      "delay": 1,
+      "severity": "minor"
+    },
+    {
+      "id": "alm-86",
+      "name": "test digital alarm #86",
+      "channel": "chnl-4",
+      "type": "onoff",
+      "set_point": false,
+      "delay": 1,
+      "severity": "minor"
+    },
+    {
+      "id": "alm-87",
+      "name": "test digital alarm #87",
+      "channel": "chnl-4",
+      "type": "onoff",
+      "set_point": false,
+      "delay": 1,
+      "severity": "minor"
+    },
+    {
+      "id": "alm-88",
+      "name": "test digital alarm #88",
+      "channel": "chnl-4",
+      "type": "onoff",
+      "set_point": false,
+      "delay": 1,
+      "severity": "minor"
+    },
+    {
+      "id": "alm-89",
+      "name": "test digital alarm #89",
+      "channel": "chnl-4",
+      "type": "onoff",
+      "set_point": false,
+      "delay": 1,
+      "severity": "minor"
+    },
+    {
+      "id": "alm-90",
+      "name": "test digital alarm #90",
+      "channel": "chnl-4",
+      "type": "onoff",
+      "set_point": false,
+      "delay": 1,
+      "severity": "minor"
+    },
+    {
+      "id": "alm-91",
+      "name": "test digital alarm #91",
+      "channel": "chnl-4",
+      "type": "onoff",
+      "set_point": false,
+      "delay": 1,
+      "severity": "minor"
+    },
+    {
+      "id": "alm-92",
+      "name": "test digital alarm #92",
+      "channel": "chnl-4",
+      "type": "onoff",
+      "set_point": false,
+      "delay": 1,
+      "severity": "minor"
+    },
+    {
+      "id": "alm-93",
+      "name": "test digital alarm #93",
+      "channel": "chnl-4",
+      "type": "onoff",
+      "set_point": false,
+      "delay": 1,
+      "severity": "minor"
+    },
+    {
+      "id": "alm-94",
+      "name": "test digital alarm #94",
+      "channel": "chnl-4",
+      "type": "onoff",
+      "set_point": false,
+      "delay": 1,
+      "severity": "minor"
+    },
+    {
+      "id": "alm-95",
+      "name": "test digital alarm #95",
+      "channel": "chnl-4",
+      "type": "onoff",
+      "set_point": false,
+      "delay": 1,
+      "severity": "minor"
+    },
+    {
+      "id": "alm-96",
+      "name": "test digital alarm #96",
+      "channel": "chnl-4",
+      "type": "onoff",
+      "set_point": false,
+      "delay": 1,
+      "severity": "minor"
+    },
+    {
+      "id": "alm-97",
+      "name": "test digital alarm #97",
+      "channel": "chnl-4",
+      "type": "onoff",
+      "set_point": false,
+      "delay": 1,
+      "severity": "minor"
+    },
+    {
+      "id": "alm-98",
+      "name": "test digital alarm #98",
+      "channel": "chnl-4",
+      "type": "onoff",
+      "set_point": false,
+      "delay": 1,
+      "severity": "minor"
+    },
+    {
+      "id": "alm-99",
+      "name": "test digital alarm #99",
+      "channel": "chnl-4",
+      "type": "onoff",
+      "set_point": false,
+      "delay": 1,
+      "severity": "minor"
+    },
+    {
+      "id": "alm-100",
+      "name": "test digital alarm #100",
+      "channel": "chnl-4",
+      "type": "onoff",
+      "set_point": false,
+      "delay": 1,
+      "severity": "minor"
     }
   ]
 }

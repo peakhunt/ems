@@ -21,5 +21,8 @@
     "maxConnPool": 100,
     "queueLimit" : 0
   },
+  "cli": {
+    "port": 12345
+  },
   "project": "project_template.json"
 }

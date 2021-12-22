@@ -23,6 +23,18 @@ export default {
     sysInitialized(state) {
       return state.initialized;
     },
+    projectName(state) {
+      if (state.info === null) {
+        return '-';
+      }
+      return state.info.project.info.name;
+    },
+    projectSchema(state) {
+      if (state.info === null) {
+        return '-';
+      }
+      return state.info.project.info.schema;
+    },
   },
   actions: {
     get_sys_info({ commit }) {
@@ -31,6 +43,7 @@ export default {
           .then((resp) => {
             const info = resp.data;
             commit('set_sys_info', info);
+            commit('rebuild_alarms', info.project.alarms);
             commit('set_initialized', true);
             resolve(resp);
           })

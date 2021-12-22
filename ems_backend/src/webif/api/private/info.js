@@ -1,9 +1,10 @@
 const { version } = require('../../../../package.json');
+const project = require('../../../project');
 
 function info(req, res) {
   const response = {
     version,
-    // FIXME rest of the system info
+    project,
   };
 
   res.json(response);

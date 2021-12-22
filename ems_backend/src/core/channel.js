@@ -36,6 +36,8 @@ util.inherits(Channel, EventEmitter);
 function createChannel(config) {
   const channel = new Channel(config);
 
+  channel.setMaxListeners(512);
+
   return channel;
 }
 

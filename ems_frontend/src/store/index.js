@@ -9,6 +9,7 @@ import Version from './version';
 import Languages from './lang';
 import EventLog from './event_log';
 import System from './sys_info';
+import Alarm from './alarm';
 
 // const ls = new SecureLS({ isCompression: false });
 
@@ -49,6 +50,7 @@ export default new Vuex.Store({
     Languages,
     EventLog,
     System,
+    Alarm,
   },
   plugins: [
     sessionStorage,

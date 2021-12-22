@@ -38,18 +38,54 @@
           <v-card-text>
             <v-data-table
              :headers="headers"
-             :items="items"
+             :items="alarmArray"
              :search="search"
              :items-per-page="-1"
              :locale="$i18n.locale"
+             sort-by="time"
+             :sort-desc="true"
              hide-default-footer
              class="elevation-6"
              @click:row="onAlarmItemClick"
             >
               <template v-slot:item.severity="{ item }">
-                <AlarmChip :severity="item.severity" :ack="item.ack" :tick="tick"/>
+                <AlarmChip :severity="item.severity" :ack="item.state === 3" :tick="tick"/>
               </template>
             </v-data-table>
+            <!--
+            <v-list dense :elevation="6">
+              <template v-for="(item, index) in alarmArray">
+                <v-list-item
+                 v-if="item.state !== 0"
+                 :key="item.id"
+                 @click="onAlarmItemClick"
+                >
+                  <v-container>
+                    <v-row align="center" no-gutters>
+                      <v-col cols="1">
+                        <div>
+                        {{item.id}}
+                        </div>
+                      </v-col>
+
+                      <v-col cols="1">
+                        <AlarmChip :severity="item.severity" :ack="item.state === 3" :tick="tick"/>
+                      </v-col>
+
+                      <v-col cols="2">
+                        {{item.time}}
+                      </v-col>
+
+                      <v-col>
+                        {{item.name}}
+                      </v-col>
+                    </v-row>
+                  </v-container>
+                </v-list-item>
+                <v-divider :key="index"></v-divider>
+              </template>
+            </v-list>
+            -->
           </v-card-text>
         </material-card>
       </v-col>
@@ -58,6 +94,7 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex';
 import MaterialCard from '@/components/MaterialCard.vue';
 import AlarmChip from '@/components/AlarmChip.vue';
 
@@ -68,6 +105,10 @@ export default {
     AlarmChip,
   },
   computed: {
+    ...mapGetters([
+      'alarmHash',
+      'alarmArray',
+    ]),
   },
   data() {
     return {
@@ -85,45 +126,30 @@ export default {
           width: 130,
         },
         {
-          sortable: true,
+          sortable: false,
+          text: 'state',
+          value: 'state',
+          width: 80,
+          align: ' d-none',
+          filter: (value) => value !== 0,
+        },
+        {
+          sortable: false,
           text: this.$i18n.t('alarms.severity'),
           value: 'severity',
           width: 130,
           align: 'center',
         },
         {
-          sortable: true,
+          sortable: false,
           text: this.$i18n.t('alarms.time'),
           value: 'time',
           width: 200,
         },
         {
-          sortable: true,
+          sortable: false,
           text: this.$i18n.t('alarms.description'),
           value: 'name',
-        },
-      ],
-      items: [
-        {
-          id: 'ALM-1',
-          severity: 'minor',
-          time: '2021-12-15 13:21:33',
-          name: 'Test Alarm Minor #1 Blah blah Bl;ah blah',
-          ack: false,
-        },
-        {
-          id: 'ALM-2',
-          severity: 'major',
-          time: '2021-12-15 13:31:00',
-          name: 'Test Alarm Major #2 Blah blah Bl;ah blah',
-          ack: false,
-        },
-        {
-          id: 'ALM-3',
-          severity: 'critical',
-          time: '2021-12-15 14:21:55',
-          name: 'Test Alarm Critical #3 Blah blah Bl;ah blah',
-          ack: false,
         },
       ],
     };
