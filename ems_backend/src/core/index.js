@@ -58,13 +58,28 @@ function getAlarmStates() {
     alarms.push({
       id: alarm.config.id,
       state: alarm.state,
-      time: dateFormat(alarm.alarmTime, 'yyyy-mm-dd HH-MM-ss'),
+      time: toDateTimeStr(alarm.alarmTime),
     });
   }
   return alarms;
 }
 
+function getChannel(id) {
+  return _channels[id];
+}
+
+function getAlarm(id) {
+  return _alarms[id];
+}
+
+function toDateTimeStr(t) {
+  return dateFormat(t, 'yyyy-mm-dd HH-MM-ss');
+}
+
 module.exports = {
   init,
   getAlarmStates,
+  getChannel,
+  getAlarm,
+  toDateTimeStr,
 };

@@ -8,6 +8,13 @@ const AlarmState = {
   Active: 3,
 };
 
+const AlarmStateStr = {
+  [AlarmState.Inactive]: 'inactive',
+  [AlarmState.PendingActive]: 'pending active',
+  [AlarmState.PendingInactive]: 'pending inactive',
+  [AlarmState.Active]: 'active',
+};
+
 function checkAlarm(alarm, source) {
   //
   // FIXME time delay
@@ -81,8 +88,10 @@ Alarm.prototype = {
   // alarm events
   //
   occur() {
-    switch (this._stsate) {
+    console.log(`hhhhhhhh ${this._state}`);
+    switch (this._state) {
       case AlarmState.Inactive:
+        console.log(`hhhhhhhh ${this._state}`);
         this._alarm_time = new Date();
         moveState(this, AlarmState.PendingActive);
         break;
@@ -99,7 +108,7 @@ Alarm.prototype = {
     }
   },
   clear() {
-    switch (this._stsate) {
+    switch (this._state) {
       case AlarmState.PendingActive:
         moveState(this, AlarmState.PendingInactive);
         break;
@@ -116,7 +125,7 @@ Alarm.prototype = {
     }
   },
   ack() {
-    switch (this._stsate) {
+    switch (this._state) {
       case AlarmState.PendingActive:
         moveState(this, AlarmState.Active);
         break;
@@ -131,6 +140,10 @@ Alarm.prototype = {
         // ignore
         break;
     }
+  },
+
+  stateStr() {
+    return AlarmStateStr[this._state];
   },
 };
 

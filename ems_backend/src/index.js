@@ -1,4 +1,4 @@
-require("fix-esm").register();
+// require("fix-esm").register();
 require("dotenv").config();
 
 const web_if = require('./webif');

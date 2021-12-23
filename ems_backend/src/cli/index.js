@@ -1,6 +1,8 @@
 const telnet = require('../util/telnet');
 const logger = require('../logger');
 const cfg = require('../config');
+const channel = require('./channel');
+const alarm = require('./alarm');
 
 function cmdHandlerHelp(client) {
   // eslint-disable-next-line no-use-before-define
@@ -75,7 +77,9 @@ function onClientData(client, b) {
 
 function init() {
   Object.assign(
-    _commands
+    _commands,
+    channel,
+    alarm,
   );
 
   telnet.createServer((client) => {
