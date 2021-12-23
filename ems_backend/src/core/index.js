@@ -54,7 +54,8 @@ function init() {
 function getAlarmStates() {
   const alarms = [];
 
-  for (const alarm in _alarms) {
+  for (const id in _alarms) {
+    let alarm = _alarms[id];
     alarms.push({
       id: alarm.config.id,
       state: alarm.state,
@@ -76,10 +77,21 @@ function toDateTimeStr(t) {
   return dateFormat(t, 'yyyy-mm-dd HH-MM-ss');
 }
 
+function ackAlarm(id) {
+  const alarm = _alarms[id];
+
+  if (alarm !== undefined) {
+    alarm.ack();
+  }
+
+  return alarm;
+}
+
 module.exports = {
   init,
   getAlarmStates,
   getChannel,
   getAlarm,
   toDateTimeStr,
+  ackAlarm,
 };

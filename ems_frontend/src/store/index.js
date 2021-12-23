@@ -10,6 +10,7 @@ import Languages from './lang';
 import EventLog from './event_log';
 import System from './sys_info';
 import Alarm from './alarm';
+import TickSrc from './ticksrc';
 
 // const ls = new SecureLS({ isCompression: false });
 
@@ -51,6 +52,7 @@ export default new Vuex.Store({
     EventLog,
     System,
     Alarm,
+    TickSrc,
   },
   plugins: [
     sessionStorage,

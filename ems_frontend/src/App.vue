@@ -96,52 +96,23 @@
         <v-icon>dashboard</v-icon>
       </v-btn>
 
-      <!-- notification button -->
-      <v-menu
-       bottom
-       left
-       offset-y
-       origin="top left"
-       transition="scale-transition"
-      >
-        <template v-slot:activator="{ attrs, on }">
-          <v-btn
-           class="ml-2"
-           min-width="0"
-           text
-           v-bind="attrs"
-           v-on="on"
-          >
-            <v-badge
-             bordered
-             color="red"
-             overlap
-            >
-              <template v-slot:badge>
-                <span>5</span>
-              </template>
-              <v-icon>notifications</v-icon>
-            </v-badge>
-          </v-btn>
-        </template>
-        <v-list
-         flat
-         nav
+      <!-- alarm button -->
+      <v-btn class="ml-2" min-width="0" text to="/alarms" eaxct>
+        <v-badge
+         bordered
+         color="red"
+         overlap
+         :value="alarmStat.totalAlarms !== 0"
         >
-          <app-bar-item2
-           v-for="(n, i) in notifications"
-           :key="i"
-          >
-            <template v-slot:content>
-              <v-list-item-content>
-                <v-list-item-title>{{ n }} </v-list-item-title>
-              </v-list-item-content>
-            </template>
-          </app-bar-item2>
-        </v-list>
-      </v-menu>
+          <template v-slot:badge>
+            <span>{{ alarmStat.totalAlarms}}</span>
+            <span v-if="alarmStat.totalUnacked !== 0">/ {{ alarmStat.totalUnacked }}</span>
+          </template>
+          <v-icon :color="notiColor">notifications</v-icon>
+        </v-badge>
+      </v-btn>
 
-      <!-- notification button -->
+      <!-- user button -->
       <v-menu
        bottom
        left
@@ -286,6 +257,8 @@ export default {
       'snackbar_queue_items',
       'appVersion',
       'projectName',
+      'alarmStat',
+      'tick500ms',
     ]),
     currentRouteName() {
       return this.$route.name;
@@ -297,6 +270,17 @@ export default {
         }
         return false;
       });
+    },
+    notiColor() {
+      if (this.alarmStat.totalUnacked === 0) {
+        return 'black';
+      }
+
+      if (this.tick500ms) {
+        return 'red';
+      }
+
+      return 'black';
     },
   },
   name: 'App',
@@ -385,11 +369,13 @@ export default {
           self.$store.dispatch('closeProgress');
           self.$router.push('/login');
           self.logoutInProress = false;
+          self.stopSystem();
         })
         .catch(() => {
           self.$store.dispatch('closeProgress');
           self.$router.push('/login');
           self.logoutInProress = false;
+          self.stopSystem();
         });
     },
     onBottomSheetConfirm() {
@@ -400,10 +386,17 @@ export default {
       this.$store.dispatch('removeFromSnackbar', id);
     },
     onLoggedOutConfirm() {
+      this.stopSystem();
       this.loggedOutDialog = false;
       this.$store.dispatch('logout_force');
       this.$router.push('/login');
     },
+    //
+    // XXX
+    // this is the entry/exit point of main app
+    // in terms of initialization
+    //
+    //
     systemInitialize() {
       const self = this;
 
@@ -411,10 +404,16 @@ export default {
       self.$store.dispatch('get_sys_info')
         .then(() => {
           self.$store.dispatch('closeProgress');
+          self.$store.dispatch('startAlarmPolling');
+          self.$store.dispatch('startTickSrc');
         })
         .catch(() => {
           self.$store.dispatch('closeProgress');
         });
+    },
+    stopSystem() {
+      this.$store.dispatch('stopAlarmPolling');
+      this.$store.dispatch('stopTickSrc');
     },
   },
   watch: {

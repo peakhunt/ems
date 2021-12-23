@@ -17,9 +17,18 @@
                       {{ $i18n.t('alarms.caption') }}
                     </div>
                     <div class="text-caption mt-2">
-                      <v-chip dark color="red" class="mr-2">Critical: {{ numCriticals }}</v-chip>
-                      <v-chip dark color="orange" class="mr-2">Major: {{ numMajors }}</v-chip>
-                      <v-chip dark color="yellow" text-color="black" class="mr-2">Minor: {{ numMinors }}</v-chip>
+                      <v-chip dark color="purple" class="mr-2">
+                        Total: {{ alarmStat.totalAlarms }}/{{ alarmStat.totalUnacked}}
+                      </v-chip>
+                      <v-chip dark color="red" class="mr-2">
+                        Critical: {{ alarmStat.bySeverity['critical'].total }}/{{ alarmStat.bySeverity['critical'].unacked }}
+                      </v-chip>
+                      <v-chip dark color="orange" class="mr-2">
+                        Major: {{ alarmStat.bySeverity['major'].total }}/{{ alarmStat.bySeverity['major'].unacked }}
+                      </v-chip>
+                      <v-chip dark color="yellow" text-color="black" class="mr-2">
+                        Minor: {{ alarmStat.bySeverity['minor'].total }}/{{ alarmStat.bySeverity['minor'].unacked }}
+                      </v-chip>
                     </div>
                   </v-col>
                   <v-col cols="4">
@@ -46,10 +55,10 @@
              :sort-desc="true"
              hide-default-footer
              class="elevation-6"
-             @click:row="onAlarmItemClick"
+             @dblclick:row="onAlarmItemDblClick"
             >
               <template v-slot:item.severity="{ item }">
-                <AlarmChip :severity="item.severity" :ack="item.state === 3" :tick="tick"/>
+                <AlarmChip :severity="item.severity" :ack="item.state === 3" :tick="tick500ms"/>
               </template>
             </v-data-table>
             <!--
@@ -108,15 +117,12 @@ export default {
     ...mapGetters([
       'alarmHash',
       'alarmArray',
+      'alarmStat',
+      'tick500ms',
     ]),
   },
   data() {
     return {
-      blinkTimer: null,
-      numCriticals: 1,
-      numMajors: 1,
-      numMinors: 1,
-      tick: false,
       search: '',
       headers: [
         {
@@ -155,14 +161,8 @@ export default {
     };
   },
   mounted() {
-    const self = this;
-
-    self.blinkTimer = setInterval(() => {
-      self.tick = !self.tick;
-    }, 500);
   },
   unmounted() {
-    clearInterval(this.blinkTimer);
   },
   methods: {
     getColor(category) {
@@ -176,9 +176,8 @@ export default {
           return 'red';
       }
     },
-    onAlarmItemClick(arg) {
-      const item = arg;
-      item.ack = true;
+    onAlarmItemDblClick(_, { item }) {
+      this.$store.dispatch('ackAlarm', item.id);
     },
   },
 };

@@ -88,10 +88,8 @@ Alarm.prototype = {
   // alarm events
   //
   occur() {
-    console.log(`hhhhhhhh ${this._state}`);
     switch (this._state) {
       case AlarmState.Inactive:
-        console.log(`hhhhhhhh ${this._state}`);
         this._alarm_time = new Date();
         moveState(this, AlarmState.PendingActive);
         break;
