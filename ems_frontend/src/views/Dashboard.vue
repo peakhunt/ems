@@ -79,10 +79,10 @@
           <template #heading>
             <div class="pa-8 white--text">
               <div class="text-h4 font-weight-light">
-                Employees Stats
+                Blah Blah Stats
               </div>
               <div class="text-caption">
-                New employees on 15th September, 2016
+                blah blah subtext comes here
               </div>
             </div>
           </template>
@@ -113,24 +113,24 @@
               <span
                 class="subheading font-weight-light mx-3"
                 style="align-self: center"
-              >Tasks:</span>
+              >Whatever:</span>
               <v-tab class="mr-3">
                 <v-icon class="mr-2">
                   mdi-bug
                 </v-icon>
-                Bugs
+                Blah-1
               </v-tab>
               <v-tab class="mr-3">
                 <v-icon class="mr-2">
                   mdi-code-tags
                 </v-icon>
-                Website
+                Blah-2
               </v-tab>
               <v-tab>
                 <v-icon class="mr-2">
                   mdi-cloud
                 </v-icon>
-                Server
+                Blah-3
               </v-tab>
             </v-tabs>
           </template>
@@ -213,7 +213,7 @@ export default {
       charts: [{
         type: 'Bar',
         color: 'primary',
-        title: 'Website Views',
+        title: 'Blah Blah Stats',
         subtitle: 'Last Campaign Performance',
         time: 'updated 10 minutes ago',
         data: {
@@ -248,7 +248,7 @@ export default {
       }, {
         type: 'Line',
         color: 'success',
-        title: 'Daily Sales',
+        title: 'Blah Blah Stat',
         subtitle: '<i class="mdi mdi-arrow-up green--text"></i><span class="green--text">55%</span>&nbsp;increase in today\'s sales',
         time: 'updated 4 minutes ago',
         data: {
@@ -271,7 +271,7 @@ export default {
       }, {
         type: 'Line',
         color: 'info',
-        title: 'Completed Tasks',
+        title: 'Blah Blah Chart',
         subtitle: 'Last Campaign Performance',
         time: 'campaign sent 26 minutes ago',
         data: {
@@ -298,7 +298,7 @@ export default {
           actionText: 'Get More Space...',
           color: '#FD9A13',
           icon: 'chair',
-          title: 'Bookings',
+          title: 'Whatever',
           value: '184',
         },
         {
@@ -306,7 +306,7 @@ export default {
           actionText: 'Tracked from Google Analytics',
           color: 'primary',
           icon: 'bar_chart',
-          title: 'Website Visits',
+          title: 'Blah Blah Blah',
           value: '75.521',
         },
         {
@@ -314,7 +314,7 @@ export default {
           actionText: 'Last 24 Hours',
           color: 'success',
           icon: 'store',
-          title: 'Revenue',
+          title: 'Hey Blah Hey',
           value: '$34,245',
         },
         {
@@ -322,7 +322,7 @@ export default {
           actionText: 'Just Updated',
           color: 'info',
           icon: 'notifications_active',
-          title: 'Followers',
+          title: 'Whatever comes',
           value: '+245',
         },
       ],
@@ -339,19 +339,19 @@ export default {
         },
         {
           sortable: false,
-          text: 'Salary',
+          text: 'blah blah',
           value: 'salary',
           align: 'right',
         },
         {
           sortable: false,
-          text: 'Country',
+          text: 'Whatever',
           value: 'country',
           align: 'right',
         },
         {
           sortable: false,
-          text: 'City',
+          text: 'Blah',
           value: 'city',
           align: 'right',
         },
