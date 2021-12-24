@@ -77,14 +77,21 @@ function toDateTimeStr(t) {
   return dateFormat(t, 'yyyy-mm-dd HH-MM-ss');
 }
 
-function ackAlarm(id) {
-  const alarm = _alarms[id];
+function ackAlarms(ids) {
+  const rsp = [];
 
-  if (alarm !== undefined) {
-    alarm.ack();
-  }
+  ids.forEach((id) => {
+    const alarm = _alarms[id];
+    if (alarm !== undefined) {
+      alarm.ack();
+    }
+    rsp.push({
+      id,
+      state: alarm.state,
+    });
+  });
 
-  return alarm;
+  return rsp;
 }
 
 module.exports = {
@@ -93,5 +100,5 @@ module.exports = {
   getChannel,
   getAlarm,
   toDateTimeStr,
-  ackAlarm,
+  ackAlarms,
 };

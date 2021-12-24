@@ -102,9 +102,11 @@ export default {
       });
       Object.assign(state.stat, stat);
     },
-    update_alarm(state, info) {
-      const alarm = state.alarmHash[info.id];
-      alarm.state = info.state;
+    update_alarm(state, acks) {
+      acks.forEach((info) => {
+        const alarm = state.alarmHash[info.id];
+        alarm.state = info.state;
+      });
     },
   },
   getters: {
@@ -124,11 +126,11 @@ export default {
           });
       });
     },
-    ackAlarm({ commit }, id) {
+    ackAlarm({ commit }, { ids }) {
       return new Promise((resolve, reject) => {
-        axios({ url: '/api/private/alarm_ack', data: { id }, method: 'POST' })
+        axios({ url: '/api/private/alarm_ack', data: { ids }, method: 'POST' })
           .then((resp) => {
-            commit('update_alarm', resp.data);
+            commit('update_alarm', resp.data.acks);
             resolve();
           })
           .catch(() => {

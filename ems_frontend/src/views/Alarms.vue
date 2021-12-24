@@ -177,7 +177,7 @@ export default {
       }
     },
     onAlarmItemDblClick(_, { item }) {
-      this.$store.dispatch('ackAlarm', item.id);
+      this.$store.dispatch('ackAlarm', { ids: [item.id] });
     },
   },
 };

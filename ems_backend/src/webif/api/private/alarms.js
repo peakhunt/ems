@@ -17,19 +17,18 @@ function alarm_ack(req, res) {
     });
   }
 
-  const id = req.body.id;
+  const ids = req.body.ids;
 
-  const alarm = core.ackAlarm(id);
+  const rsp = core.ackAlarms(ids);
 
   return res.json({
-    id,
-    state: alarm.state
+    acks: rsp,
   });
 }
 
 module.exports = (router) => {
   router.get('/alarms', get_current_alarms);
   router.post('/alarm_ack',
-    body('id').isString(),
+    body('ids').isArray(),
     alarm_ack);
 };
